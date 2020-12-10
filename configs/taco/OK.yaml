@@ -1,0 +1,16 @@
+state: OK
+
+links: 
+- name: primary
+  url: https://oklahoma.gov/covid19.html
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+
+- name: secondary
+  url: https://coronavirus.health.ok.gov/sites/g/files/gmc786/f/eo_-_covid-19_report_-_12-8-20.pdf
+
+- name: tertiary
+  url: https://coronavirus.health.ok.gov/sites/g/files/gmc786/f/2020.12.8_weekly_epi_report.pdf
+

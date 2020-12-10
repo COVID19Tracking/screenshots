@@ -1,0 +1,19 @@
+state: AR
+
+links: 
+- name: primary
+  url: https://experience.arcgis.com/experience/c2ef4a4fcbe5458fbf2e48a21e4fece9
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember364.ember-view");
+    page.click("#ember364.ember-view");
+    await page.waitForDelay(2000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 1400
+      width: 3000
+
+- name: secondary
+  url: https://experience.arcgis.com/experience/c2ef4a4fcbe5458fbf2e48a21e4fece9
+

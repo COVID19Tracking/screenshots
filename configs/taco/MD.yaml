@@ -1,0 +1,22 @@
+state: MD
+
+links: 
+- name: primary
+  url: https://coronavirus.maryland.gov/
+
+- name: secondary
+  url: https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDCOVID19_TestingVolume/FeatureServer/0/query?where=1%3D1&outFields=*&outStatistics=[%7B%22statisticType%22%3A+%22sum%22%2C+%22onStatisticField%22%3A+%22number_of_positives%22%2C+%22outStatisticFieldName%22%3A+%22total_number_of_positives%22%7D]
+
+- name: tertiary
+  url: https://services.arcgis.com/njFNhDsUCentVYJW/arcgis/rest/services/MDCOVID19_SerologyTests/FeatureServer/0/query?where=1%3D1&outFields=%2A
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.waitForSelector("div.table-responsive");
+    await page.click("div.table-responsive");
+    for (var i = 0;
+    i < 1000;
+    i++) {
+      await page.keyboard.down("ArrowRight");
+    } page.done();
+

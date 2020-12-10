@@ -1,0 +1,9 @@
+state: OR
+
+links: 
+- name: primary
+  url: https://govstatus.egov.com/OR-OHA-COVID-19
+
+- name: secondary
+  url: https://www.oregon.gov/dhs/COVID-19/Documents/Confirmed-Facilities-COVID-19.pdf
+

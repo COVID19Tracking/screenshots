@@ -1,0 +1,33 @@
+state: AZ
+
+links: 
+- name: primary
+  url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".demodashboard");
+    page.click(".demodashboard");
+    await page.waitForFunction(()=>document.querySelector("#subcontent").textContent!=="");
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: secondary
+  url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".hospitalizationdashboard");
+    page.click(".hospitalizationdashboard");
+    await page.waitForFunction(()=>document.querySelector("#subcontent").textContent!=="");
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: tertiary
+  url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".deathdashboard");
+    page.click(".deathdashboard");
+    await page.waitForFunction(()=>document.querySelector("#subcontent h2").textContent=="COVID-19 Deaths");
+    await page.waitForDelay(10000);
+    page.done();
+

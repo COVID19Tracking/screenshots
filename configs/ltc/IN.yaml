@@ -1,0 +1,6 @@
+state: IN
+
+links: 
+- name: primary
+  url: https://hub.mph.in.gov/dataset/c2c241cf-cf92-4870-9ac3-a59328f12c33/resource/61487163-7efb-42ee-bcb7-fa1c720debdd/download/ltc_facility_cases_and_deaths.xlsx
+

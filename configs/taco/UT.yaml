@@ -1,0 +1,17 @@
+state: UT
+
+links: 
+- name: primary
+  url: https://coronavirus-dashboard.utah.gov/
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+
+- name: secondary
+  url: https://coronavirus-dashboard.utah.gov/#hospitalizations-mortality
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+

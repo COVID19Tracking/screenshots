@@ -1,0 +1,6 @@
+state: VA
+
+links: 
+- name: primary
+  url: https://public.tableau.com/views/VirginiaCOVID-19Dashboard/VirginiaCOVID-19Dashboard?:embed=yes&:display_count=yes&:showVizHome=no&:toolbar=no
+

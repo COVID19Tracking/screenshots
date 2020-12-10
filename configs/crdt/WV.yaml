@@ -1,0 +1,6 @@
+state: WV
+
+links: 
+- name: primary
+  url: https://dhhr.wv.gov/COVID-19/Pages/default.aspx
+

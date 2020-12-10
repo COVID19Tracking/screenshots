@@ -1,0 +1,6 @@
+state: VT
+
+links: 
+- name: primary
+  url: https://www.healthvermont.gov/response/coronavirus-covid-19/current-activity-vermont#datasummaries
+

@@ -1,0 +1,9 @@
+state: FL
+
+links: 
+- name: primary
+  url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/long-term-care-facilities/ltcf-case-reports/ltcf_latest.pdf
+
+- name: secondary
+  url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/long-term-care-facilities/ltcf-deaths-reports/ltcf_deaths_latest.pdf
+

@@ -1,0 +1,6 @@
+state: LA
+
+links: 
+- name: primary
+  url: http://ldh.la.gov/Coronavirus/
+

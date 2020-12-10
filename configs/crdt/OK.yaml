@@ -1,0 +1,9 @@
+state: OK
+
+links: 
+- name: primary
+  url: https://coronavirus.health.ok.gov/
+
+- name: secondary
+  url: https://looker-dashboards.ok.gov/embed/dashboards/76
+

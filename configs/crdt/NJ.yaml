@@ -1,0 +1,9 @@
+state: NJ
+
+links: 
+- name: primary
+  url: https://www.state.nj.us/health/cd/documents/topics/NCOV/COVID_Confirmed_Case_Summary.pdf
+
+- name: secondary
+  url: https://covid19.nj.gov/#live-updates
+

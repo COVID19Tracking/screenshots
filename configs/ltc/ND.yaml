@@ -1,0 +1,6 @@
+state: ND
+
+links: 
+- name: primary
+  url: https://www.health.nd.gov/diseases-conditions/coronavirus/north-dakota-coronavirus-cases
+

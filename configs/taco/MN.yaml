@@ -1,0 +1,23 @@
+state: MN
+
+links: 
+- name: primary
+  url: https://www.health.state.mn.us/diseases/coronavirus/situation.html
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[href='#testing1']");
+    page.click("[href='#testing1']");
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: secondary
+  url: https://mn.gov/covid19/data/response-prep/response-capacity.jsp
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(15000);
+    await page.evaluate(() => {
+      document.evaluate("//*/div[2]/a[contains(text(),'non-COVID')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.parentNode.getElementsByTagName("input")[0].checked = false;
+    });
+    await page.waitForDelay(5000);
+    page.done();
+

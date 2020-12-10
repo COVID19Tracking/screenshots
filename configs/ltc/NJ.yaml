@@ -1,0 +1,15 @@
+state: NJ
+
+links: 
+- name: primary
+  url: http://www.state.nj.us/health/healthfacilities/documents/LTC_Facilities_Outbreaks_List.xlsx
+
+- name: secondary
+  url: https://maps.arcgis.com/apps/MapSeries/index.html?appid=c2efd1898e48452e83d7218329e953d7
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[aria-label='Go to entry 4: Long Term Care']");
+    page.click("[aria-label='Go to entry 4: Long Term Care']", delay=1000);
+    await page.waitForDelay(30000);
+    page.done();
+

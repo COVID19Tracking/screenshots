@@ -1,0 +1,16 @@
+state: GU
+
+links: 
+- name: primary
+  url: https://www.arcgis.com/apps/opsdashboard/index.html#/7bd22c995a1b482fb727a916146f3307
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember125.ember-view");
+    page.click("#ember125.ember-view");
+    await page.waitForDelay(1000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 1400
+      width: 3000
+

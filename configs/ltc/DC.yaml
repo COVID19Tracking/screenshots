@@ -1,0 +1,6 @@
+state: DC
+
+links: 
+- name: primary
+  url: https://coronavirus.dc.gov/data
+

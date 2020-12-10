@@ -1,0 +1,17 @@
+state: OK
+
+links: 
+- name: primary
+  url: https://coronavirus.health.ok.gov/executive-order-reports
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("button.prefix-overlay-close");
+    page.click("button.prefix-overlay-close");
+    await page.waitForFunction(()=>document.querySelector("#main-content").textContent!=="");
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+

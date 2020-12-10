@@ -1,0 +1,18 @@
+state: IL
+
+links: 
+- name: primary
+  url: http://www.dph.illinois.gov/topics-services/diseases-and-conditions/diseases-a-z-list/coronavirus
+
+- name: secondary
+  url: http://www.dph.illinois.gov/covid19/hospitalization-utilization
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("a.ckeditor-accordion-toggler");
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'Statewide Hospital Statistics1')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+

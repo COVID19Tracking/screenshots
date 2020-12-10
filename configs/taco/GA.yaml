@@ -1,0 +1,12 @@
+state: GA
+
+links: 
+- name: primary
+  url: https://dph.georgia.gov/covid-19-daily-status-report
+
+- name: secondary
+  url: https://www.arcgis.com/apps/opsdashboard/index.html#/e40c39564f724af7bfe8fd5d88deadb6
+
+- name: tertiary
+  url: https://augustagis.maps.arcgis.com/apps/opsdashboard/index.html#/4eec20925b6b4f338368df0ffcba472d
+

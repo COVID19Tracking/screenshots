@@ -1,0 +1,6 @@
+state: IL
+
+links: 
+- name: primary
+  url: http://www.dph.illinois.gov/covid19/long-term-care-facility-outbreaks-covid-19
+

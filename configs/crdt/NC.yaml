@@ -1,0 +1,6 @@
+state: NC
+
+links: 
+- name: primary
+  url: https://covid19.ncdhhs.gov/dashboard/cases
+

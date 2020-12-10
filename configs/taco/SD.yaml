@@ -1,0 +1,10 @@
+state: SD
+
+links: 
+- name: primary
+  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+

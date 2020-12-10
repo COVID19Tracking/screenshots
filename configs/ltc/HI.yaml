@@ -1,0 +1,6 @@
+state: HI
+
+links: 
+- name: primary
+  url: https://www.hawaiidata.org/covid19
+

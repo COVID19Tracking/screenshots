@@ -1,0 +1,9 @@
+state: TN
+
+links: 
+- name: primary
+  url: https://www.tn.gov/health/cedep/ncov/data/clusters-in-long-term-care-facilities.html
+
+- name: secondary
+  url: https://www.tn.gov/health/cedep/ncov.html
+

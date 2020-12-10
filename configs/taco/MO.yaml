@@ -1,0 +1,12 @@
+state: MO
+
+links: 
+- name: primary
+  url: https://showmestrong.mo.gov/data/statewide-public-health/
+
+- name: secondary
+  url: https://showmestrong.mo.gov/public-healthcare-testing/
+
+- name: tertiary
+  url: https://showmestrong.mo.gov/public-healthcare/
+

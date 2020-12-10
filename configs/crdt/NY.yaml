@@ -1,0 +1,9 @@
+state: NY
+
+links: 
+- name: primary
+  url: https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-FatalityDetail?%3Aembed=yes&%3Atoolbar=no&%3Atabs=n
+
+- name: secondary
+  url: https://github.com/nychealth/coronavirus-data/blob/master/deaths/probable-confirmed-by-race.csv
+

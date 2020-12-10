@@ -1,0 +1,19 @@
+state: AL
+
+links: 
+- name: primary
+  url: https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember349.ember-view");
+    page.click("#ember349.ember-view");
+    await page.waitForDelay(2000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 1400
+      width: 3000
+
+- name: secondary
+  url: http://www.alabamapublichealth.gov/covid19/index.html
+

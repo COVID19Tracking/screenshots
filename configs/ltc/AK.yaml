@@ -1,0 +1,10 @@
+state: AK
+
+links: 
+- name: primary
+  url: https://coronavirus-response-alaska-dhss.hub.arcgis.com/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+

@@ -1,0 +1,15 @@
+state: DE
+
+links: 
+- name: primary
+  url: https://myhealthycommunity.dhss.delaware.gov/locations/state#testing
+
+- name: secondary
+  url: https://myhealthycommunity.dhss.delaware.gov/locations/state#testing
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#tab_1[href='#test_tabs_1_content']");
+    await page.click("#tab_1[href='#test_tabs_1_content']");
+    await page.waitForDelay(5000);
+    page.done();
+

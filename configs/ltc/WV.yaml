@@ -1,0 +1,14 @@
+state: WV
+
+links: 
+- name: primary
+  url: https://dhhr.wv.gov/COVID-19/Pages/default.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 4000
+      width: 1400
+

@@ -1,0 +1,31 @@
+state: TX
+
+links: 
+- name: primary
+  url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: secondary
+  url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/0d8bdf9be927459d9cb11b9eaef6101f
+
+- name: tertiary
+  url: https://www.dshs.texas.gov/coronavirus/TexasCOVID-19HospitalizationsOverTimebyTSA.xlsx
+
+- name: quaternary
+  url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/0d8bdf9be927459d9cb11b9eaef6101f
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//div[text()='Hospitals - Statewide']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("div[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  renderSettings: 
+    viewport:
+      width: 2000
+

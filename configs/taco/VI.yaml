@@ -1,0 +1,6 @@
+state: VI
+
+links: 
+- name: primary
+  url: https://doh.vi.gov/covid19usvi
+

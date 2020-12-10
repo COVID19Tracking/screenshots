@@ -1,0 +1,23 @@
+state: MI
+
+links: 
+- name: primary
+  url: https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+
+- name: secondary
+  url: https://www.michigan.gov/coronavirus/0,9753,7-406-98159-523641--,00.html
+
+- name: tertiary
+  url: https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173-531113--,00.html
+
+- name: quaternary
+  url: https://app.powerbigov.us/view?r=eyJrIjoiNDY0ZGVlMDItMzUzNC00ZGE5LWFjYzQtNzliOGJkZWQ4YTgzIiwidCI6ImQ1ZmI3MDg3LTM3NzctNDJhZC05NjZhLTg5MmVmNDcyMjVkMSJ9
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+

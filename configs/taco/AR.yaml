@@ -1,0 +1,52 @@
+state: AR
+
+links: 
+- name: primary
+  url: https://www.healthy.arkansas.gov/programs-services/topics/novel-coronavirus
+
+- name: secondary
+  url: https://experience.arcgis.com/experience/c2ef4a4fcbe5458fbf2e48a21e4fece9
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: tertiary
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html#/fd6874664d404993814de4d5a65d5cfd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(4)");
+    page.click("span.ember-view.tab-title:nth-of-type(4)");
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings: 
+    clipRectangle:
+      height: 1400
+      width: 1400
+
+- name: quaternary
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html#/fd6874664d404993814de4d5a65d5cfd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(7)");
+    page.click("span.ember-view.tab-title:nth-of-type(7)");
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings: 
+    clipRectangle:
+      height: 1400
+      width: 1400
+
+- name: quinary
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html#/fd6874664d404993814de4d5a65d5cfd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(3)");
+    page.click("span.ember-view.tab-title:nth-of-type(3)");
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings: 
+    clipRectangle:
+      height: 1400
+      width: 1400
+

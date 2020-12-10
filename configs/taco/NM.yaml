@@ -1,0 +1,6 @@
+state: NM
+
+links: 
+- name: primary
+  url: https://cvprovider.nmhealth.org/public-dashboard.html
+

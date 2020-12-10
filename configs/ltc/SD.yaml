@@ -1,0 +1,6 @@
+state: SD
+
+links: 
+- name: primary
+  url: https://doh.sd.gov/news/Coronavirus.aspx
+

@@ -1,0 +1,13 @@
+state: MS
+
+links: 
+- name: primary
+  url: https://msdh.ms.gov/msdhsite/_static/14,0,420.html
+
+- name: secondary
+  url: https://msdh.ms.gov/msdhsite/_static/14,21994,420,873.html
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(90000);
+    page.done();
+

@@ -1,0 +1,9 @@
+state: NM
+
+links: 
+- name: primary
+  url: https://cvprovider.nmhealth.org/public-dashboard.html#
+
+- name: secondary
+  url: https://cvmodeling.nmhealth.org/medical-advisory-team/modeling-updates/
+

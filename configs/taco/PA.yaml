@@ -1,0 +1,26 @@
+state: PA
+
+links: 
+- name: primary
+  url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+
+- name: secondary
+  url: https://padoh.maps.arcgis.com/apps/opsdashboard/index.html#/5662e22517b644ba874ca51fa7b61c94
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember65");
+    page.click("#ember65");
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: tertiary
+  url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/Coronavirus.aspx
+

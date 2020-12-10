@@ -1,0 +1,6 @@
+state: OH
+
+links: 
+- name: primary
+  url: https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards/overview/
+

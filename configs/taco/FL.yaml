@@ -1,0 +1,26 @@
+state: FL
+
+links: 
+- name: primary
+  url: https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429/
+
+- name: secondary
+  url: https://floridahealthcovid19.gov/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("body.modal-open");
+    await page.waitForDelay(1000);
+    await page.keyboard.press("Escape");
+    await page.waitForSelector("body:not(.modal-open)");
+    await page.waitForDelay(1000);
+    page.done();
+
+- name: tertiary
+  url: https://bi.ahca.myflorida.com/t/ABICC/views/Public/COVIDHospitalizationsCounty?%3AshowAppBanner=false&%3Adisplay_count=n&%3AshowVizHome=n&%3Aorigin=viz_share_link&%3AisGuestRedirectFromVizportal=y&%3Aembed=y
+
+- name: quaternary
+  url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/cases-monitoring-and-pui-information/state-report/state_reports_latest.pdf
+
+- name: quinary
+  url: https://services1.arcgis.com/CY1LXxl9zlJeBuRZ/ArcGIS/rest/services/Florida_COVID19_Cases/FeatureServer/0/query?where=countyname%3D%27a+state%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=html&token=
+

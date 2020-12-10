@@ -1,0 +1,9 @@
+state: TN
+
+links: 
+- name: primary
+  url: https://www.tn.gov/content/tn/health/cedep/ncov/data.html
+
+- name: secondary
+  url: https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-RaceEthSex.XLSX
+

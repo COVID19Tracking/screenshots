@@ -1,0 +1,6 @@
+state: ID
+
+links: 
+- name: primary
+  url: https://coronavirus.idaho.gov/ltc/
+

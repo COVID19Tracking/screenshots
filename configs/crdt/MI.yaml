@@ -1,0 +1,9 @@
+state: MI
+
+links: 
+- name: primary
+  url: https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html
+
+- name: secondary
+  url: https://www.michigan.gov/documents/coronavirus/Cases_by_Demographics_Statewide_693129_7.xlsx
+

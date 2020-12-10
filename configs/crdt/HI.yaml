@@ -1,0 +1,9 @@
+state: HI
+
+links: 
+- name: primary
+  url: https://experience.arcgis.com/experience/eb56a98b71324152a918e72d3ccdfc20
+
+- name: secondary
+  url: https://public.tableau.com/views/HawaiiCOVID-19-RaceChart/TableDash?%3AshowVizHome=no
+

@@ -1,0 +1,16 @@
+state: NE
+
+links: 
+- name: primary
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember427.ember-view");
+    page.click("#ember427.ember-view");
+    await page.waitForDelay(3000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 1400
+      width: 3000
+

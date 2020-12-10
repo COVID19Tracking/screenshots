@@ -1,0 +1,12 @@
+state: KS
+
+links: 
+- name: primary
+  url: https://public.tableau.com/views/COVID-19TableauVersion2/COVID-19Overview?:embed=y&:showVizHome=no
+
+- name: secondary
+  url: https://public.tableau.com/views/COVID-19TableauVersion2/DeathSummary?%3Aembed=y&%3AshowVizHome=no
+
+- name: tertiary
+  url: https://public.tableau.com/views/COVID-19TableauVersion2/TestingRates?%3Aembed=y&%3AshowVizHome=no
+

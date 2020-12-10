@@ -1,0 +1,12 @@
+state: SC
+
+links: 
+- name: primary
+  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-demographic-data-covid-19
+
+- name: secondary
+  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-demographic-data-covid-19
+
+- name: tertiary
+  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-demographic-data-covid-19
+

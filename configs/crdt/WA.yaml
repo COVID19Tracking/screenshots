@@ -1,0 +1,6 @@
+state: WA
+
+links: 
+- name: primary
+  url: https://www.doh.wa.gov/Emergencies/NovelCoronavirusOutbreak2020COVID19/DataDashboard
+

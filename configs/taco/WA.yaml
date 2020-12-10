@@ -1,0 +1,25 @@
+state: WA
+
+links: 
+- name: primary
+  url: https://www.doh.wa.gov/Emergencies/NovelCoronavirusOutbreak2020COVID19/DataDashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+  renderSettings: 
+    maxWait: 90000
+
+- name: secondary
+  url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: tertiary
+  url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
+
+- name: quaternary
+  url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
+

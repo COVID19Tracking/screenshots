@@ -1,0 +1,6 @@
+state: AS
+
+links: 
+- name: primary
+  url: https://www.americansamoa.gov/covid-19-advisories
+

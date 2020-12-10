@@ -1,0 +1,12 @@
+state: VA
+
+links: 
+- name: primary
+  url: https://www.vdh.virginia.gov/coronavirus/covid-19-in-virginia/
+
+- name: secondary
+  url: https://www.vhha.com/communications/virginia-hospital-covid-19-data-dashboard/
+
+- name: tertiary
+  url: https://data.virginia.gov/resource/3u5k-c2gr.json?%24query=select+sum%28number_of_pcr_testing%29+as+pcr_testing%2C+sum%28number_of_positive_pcr_testing%29+as+pos_pcr_testing
+

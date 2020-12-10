@@ -1,0 +1,9 @@
+state: MN
+
+links: 
+- name: primary
+  url: https://www.health.state.mn.us/diseases/coronavirus/situation.html#raceeth1
+
+- name: secondary
+  url: https://www.health.state.mn.us/diseases/coronavirus/stats/
+

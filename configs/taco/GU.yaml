@@ -1,0 +1,6 @@
+state: GU
+
+links: 
+- name: primary
+  url: http://dphss.guam.gov/covid-19/
+

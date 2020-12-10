@@ -1,0 +1,6 @@
+state: CO
+
+links: 
+- name: primary
+  url: https://covid19.colorado.gov/data/case-data
+

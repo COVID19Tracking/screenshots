@@ -1,0 +1,35 @@
+state: ID
+
+links: 
+- name: primary
+  url: https://coronavirus.idaho.gov/
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+
+- name: secondary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Testing?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#tabZoneId10");
+    await page.hover("#tabZoneId10");
+    page.done();
+
+- name: tertiary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Demographics?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    await page.waitForSelector("div#tabZoneId158");
+    await page.hover("div#tabZoneId158");
+    await page.waitForDelay(1000);
+    await page.render.screenshot();
+    page.done();
+
+- name: quaternary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Hospitalizations?%3Aembed=y&%3Aembed=y&%3AshowVizHome=no&%3AshowVizHome=n&%3Adisplay_count=y&%3Adisplay_static_image=y&%3Alanguage=en&%3AapiID=host0#navType=0&navSrc=Parse
+
+- name: quinary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Deaths?%3Aembed=y&%3Aembed=y&%3AshowVizHome=no&%3AshowVizHome=n&%3Adisplay_count=y&%3Adisplay_static_image=y&%3Alanguage=en&%3AapiID=host0#navType=0&navSrc=Parse
+

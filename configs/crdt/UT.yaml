@@ -1,0 +1,6 @@
+state: UT
+
+links: 
+- name: primary
+  url: https://coronavirus-dashboard.utah.gov/#demographics
+

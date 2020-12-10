@@ -1,0 +1,44 @@
+state: NY
+
+links: 
+- name: primary
+  url: https://coronavirus.health.ny.gov/county-county-breakdown-positive-cases
+  renderSettings: 
+    viewport:
+      width: 5000
+
+- name: secondary
+  url: https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Fatalities?%3Aembed=yes&%3Atoolbar=no&%3Atabs=n
+  renderSettings: 
+    viewport:
+      width: 5000
+
+- name: tertiary
+  url: https://www.governor.ny.gov/news
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("a[href*=\"/news/governor-cuomo-updates-new-yorkers-states-progress-during-covid-19-pandemic-\"]");
+    page.click("a[href*=\"/news/governor-cuomo-updates-new-yorkers-states-progress-during-covid-19-pandemic-\"]");
+    await page.waitForNavigation({
+     waitUntil:"domcontentloaded"});
+    await page.render.screenshot();
+    page.done();
+
+- name: quaternary
+  url: https://forward.ny.gov/daily-hospitalization-summary-region
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.mouse.move(1061, 1204);
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: quinary
+  url: https://forward.ny.gov/daily-hospitalization-summary-region
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.mouse.move(1061, 1212);
+    await page.waitForDelay(10000);
+    page.done();
+

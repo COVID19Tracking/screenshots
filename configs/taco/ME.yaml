@@ -1,0 +1,66 @@
+state: ME
+
+links: 
+- name: primary
+  url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml
+
+- name: secondary
+  url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#Accordion1");
+    await page.waitForDelay(15000);
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'View a Table of All Reported COVID-19 Tests in Maine')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    await page.waitForDelay(15000);
+    page.done();
+
+- name: tertiary
+  url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#Accordion1");
+    await page.waitForDelay(15000);
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'View a Table of Maine COVID-19 Current Hospital Use and Capacity Data')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    await page.waitForDelay(15000);
+    page.done();
+
+- name: quaternary
+  url: https://analytics.maine.gov/t/CDCExternal/views/covid-19-maine-cdc-dashboard-nav-buttons/1_Casetrendsbycounty?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fanalytics.maine.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:showAppBanner=false&:display_spinner=no&:loadOrderID=1
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='All']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(2000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Confirmed']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: quinary
+  url: https://analytics.maine.gov/t/CDCExternal/views/covid-19-maine-cdc-dashboard-nav-buttons/1_Casetrendsbycounty?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fanalytics.maine.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:showAppBanner=false&:display_spinner=no&:loadOrderID=1
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='All']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(2000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Probable']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(10000);
+    page.done();
+

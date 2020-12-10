@@ -1,0 +1,16 @@
+state: MT
+
+links: 
+- name: primary
+  url: https://montana.maps.arcgis.com/apps/MapSeries/index.html?appid=7c34f3412536439491adcc2103421d4b
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+
+- name: secondary
+  url: https://dphhs.mt.gov/publichealth/cdepi/diseases/coronavirusmt/demographics
+
+- name: tertiary
+  url: https://dphhs.mt.gov/Portals/85/publichealth/documents/CDEpi/DiseasesAtoZ/2019-nCoV/Status%20Update%20Data%20Report_12092020.pdf
+

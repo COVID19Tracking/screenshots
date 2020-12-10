@@ -1,0 +1,34 @@
+state: HI
+
+links: 
+- name: primary
+  url: https://health.hawaii.gov/coronavirusdisease2019/
+
+- name: secondary
+  url: https://health.hawaii.gov/coronavirusdisease2019/what-you-should-know/current-situation-in-hawaii/
+
+- name: tertiary
+  url: https://hiema.maps.arcgis.com/apps/opsdashboard/index.html#/9a19e1adeceb46c58185cb0396faf36b
+  overseerScript: |
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(2)");
+    page.click("span.ember-view.tab-title:nth-of-type(2)");
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: quaternary
+  url: https://hiema.maps.arcgis.com/apps/opsdashboard/index.html#/9a19e1adeceb46c58185cb0396faf36b
+  overseerScript: |
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(3)");
+    page.click("span.ember-view.tab-title:nth-of-type(3)");
+    await page.waitForDelay(10000);
+    page.done();
+
+- name: quinary
+  url: https://hawaiicovid19.com/dashboard/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(80000);
+    page.done();
+  renderSettings: 
+    maxWait: 90000
+

@@ -1,0 +1,6 @@
+state: PA
+
+links: 
+- name: primary
+  url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx
+

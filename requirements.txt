@@ -1,0 +1,7 @@
+boto3
+loguru
+pandas
+pytz
+pyyaml
+requests
+slackclient

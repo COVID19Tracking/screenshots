@@ -1,0 +1,12 @@
+state: MS
+
+links: 
+- name: primary
+  url: https://msdh.ms.gov/msdhsite/_static/resources/8578.pdf
+
+- name: secondary
+  url: https://msdh.ms.gov/msdhsite/_static/resources/8660.pdf
+
+- name: tertiary
+  url: https://msdh.ms.gov/msdhsite/_static/resources/8659.pdf
+

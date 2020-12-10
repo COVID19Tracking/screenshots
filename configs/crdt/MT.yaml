@@ -1,0 +1,6 @@
+state: MT
+
+links: 
+- name: primary
+  url: https://dphhs.mt.gov/publichealth/cdepi/diseases/coronavirusmt/demographics
+

@@ -1,0 +1,9 @@
+state: RI
+
+links: 
+- name: primary
+  url: https://ri-department-of-health-covid-19-response-testin-1d583-rihealth.hub.arcgis.com/
+
+- name: secondary
+  url: https://ri-department-of-health-covid-19-data-rihealth.hub.arcgis.com/
+

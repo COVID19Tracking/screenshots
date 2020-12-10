@@ -1,0 +1,9 @@
+state: OR
+
+links: 
+- name: primary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19CaseDemographicsandDiseaseSeverityStatewide/DemographicData?:display_count=y&:toolbar=n&:origin=viz_share_link&:showShareOptions=false
+
+- name: secondary
+  url: https://www.oregon.gov/oha/ERD/pages/covid-19-news.aspx
+

@@ -1,0 +1,15 @@
+state: AZ
+
+links: 
+- name: primary
+  url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".congregate-settings");
+    page.click(".congregate-settings");
+    await page.waitForDelay(5000);
+    page.done();
+
+- name: secondary
+  url: https://phdata.maricopa.gov/Dashboard/e10a16d8-921f-4aac-b921-26d95e638a45?e=false&vo=viewonly
+

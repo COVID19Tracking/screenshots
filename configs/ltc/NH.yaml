@@ -1,0 +1,6 @@
+state: NH
+
+links: 
+- name: primary
+  url: https://www.nh.gov/covid19/dashboard/summary.htm
+

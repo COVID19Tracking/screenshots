@@ -1,0 +1,9 @@
+state: MA
+
+links: 
+- name: primary
+  url: https://www.mass.gov/info-details/covid-19-response-reporting
+
+- name: secondary
+  url: https://www.mass.gov/info-details/covid-19-response-reporting
+

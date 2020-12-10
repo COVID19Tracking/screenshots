@@ -1,0 +1,12 @@
+state: RI
+
+links: 
+- name: primary
+  url: https://health.ri.gov/data/covid-19/
+
+- name: secondary
+  url: https://docs.google.com/spreadsheets/d/1c2QrNMz8pIbYEKzMJL7Uh2dtThOJa2j1sSMwiDo5Gz4/edit#gid=264100583
+
+- name: tertiary
+  url: https://docs.google.com/spreadsheets/d/1c2QrNMz8pIbYEKzMJL7Uh2dtThOJa2j1sSMwiDo5Gz4/gviz/tq?tqx=out:csv&sheet=1592746937
+

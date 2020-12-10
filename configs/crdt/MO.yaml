@@ -1,0 +1,24 @@
+state: MO
+
+links: 
+- name: primary
+  url: http://mophep.maps.arcgis.com/apps/MapSeries/index.html?appid=8e01a5d8d8bd4b4f85add006f9e14a9d#map
+
+- name: secondary
+  url: http://mophep.maps.arcgis.com/apps/MapSeries/index.html?appid=8e01a5d8d8bd4b4f85add006f9e14a9d#map
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[aria-label='Go to entry 2: Cases - Demographics']");
+    page.click("[aria-label='Go to entry 2: Cases - Demographics']", delay=500);
+    await page.waitForDelay(20000);
+    page.done();
+
+- name: tertiary
+  url: http://mophep.maps.arcgis.com/apps/MapSeries/index.html?appid=8e01a5d8d8bd4b4f85add006f9e14a9d#map
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[aria-label='Go to entry 6: Deaths']");
+    page.click("[aria-label='Go to entry 6: Deaths']");
+    await page.waitForDelay(10000);
+    page.done();
+

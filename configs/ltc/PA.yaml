@@ -1,0 +1,16 @@
+state: PA
+
+links: 
+- name: primary
+  url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/LTCF-Data.aspx
+  renderSettings: 
+    viewport:
+      height: 7000
+      width: 1400
+
+- name: secondary
+  url: https://www.health.pa.gov/topics/Documents/Diseases%20and%20Conditions/COVID-19%20LTCF%20Data_7-20-2020.xlsx
+
+- name: tertiary
+  url: https://www.health.pa.gov/topics/Documents/Diseases%20and%20Conditions/DHS%20Facility%20COVID-19%20Totals_7-20-2020.xlsx
+

@@ -1,0 +1,22 @@
+state: TN
+
+links: 
+- name: primary
+  url: https://www.tn.gov/health/cedep/ncov.html
+
+- name: secondary
+  url: https://apps.health.tn.gov/AEM_embed/TDH-2019-Novel-Coronavirus-Epi-and-Surveillance.pdf#toolbar=0
+
+- name: tertiary
+  url: https://data.tn.gov/t/Public/views/HospitalizedPatients/HospitalizedPatients?:embed=y
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    page.mouse.move(999, 672);
+    await page.waitForDelay(1000);
+    page.done();
+  renderSettings: 
+    viewport:
+      height: 1400
+      width: 1100
+

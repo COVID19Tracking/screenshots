@@ -1,0 +1,21 @@
+state: ID
+
+links: 
+- name: primary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard_V2/Story1?%3AshowVizHome=no
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".tabStoryPoint.tab-widget");
+    page.click(".tabStoryPoint.tab-widget:nth-of-type(2)");
+    await page.waitForDelay(2000);
+    page.done();
+
+- name: secondary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard_V2/Story1?%3AshowVizHome=no
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector(".tabStoryPoint.tab-widget");
+    page.click(".tabStoryPoint.tab-widget:nth-of-type(7)");
+    await page.waitForDelay(2000);
+    page.done();
+

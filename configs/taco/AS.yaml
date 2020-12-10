@@ -1,0 +1,15 @@
+state: AS
+
+links: 
+- name: primary
+  url: https://www.americansamoa.gov/covid-19-advisories
+
+- name: secondary
+  url: https://www.facebook.com/amsamgov/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[action='cancel']");
+    await page.click("[action='cancel']");
+    await page.waitForDelay(5000);
+    page.done();
+

@@ -1,0 +1,24 @@
+state: AR
+
+links: 
+- name: primary
+  url: https://www.healthy.arkansas.gov/programs-services/topics/novel-coronavirus#COVIDnumbers
+
+- name: secondary
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html?rand_1595871760485=1595871760485#/1d80295a97054631a5c35d0556803f16
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember366");
+    page.click("#ember366");
+    await page.waitForDelay(5000);
+    page.done();
+
+- name: tertiary
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html?rand_1595871760485=1595871760485#/1d80295a97054631a5c35d0556803f16
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#ember376");
+    page.click("#ember376");
+    await page.waitForDelay(5000);
+    page.done();
+

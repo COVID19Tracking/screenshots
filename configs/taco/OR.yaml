@@ -1,0 +1,31 @@
+state: OR
+
+links: 
+- name: primary
+  url: https://www.oregon.gov/oha/PH/DISEASESCONDITIONS/DISEASESAZ/Pages/emerging-respiratory-infections.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#prefix-dismissButton");
+    page.click("#prefix-dismissButton");
+    await page.waitForDelay(5000);
+    page.click("#prefix-dismissButton");
+    await page.waitForFunction(()=>document.querySelector("#main-content").textContent!=="");
+    await page.evaluate(() => {
+      document.evaluate("//button[contains(text(),'Demographics, Hospital Capacity and Testing Tables')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("button[ctpclickhere]");
+    await page.waitForDelay(5000);
+    page.done();
+
+- name: secondary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19Update/CaseandTesting
+
+- name: tertiary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19TestingandOutcomesbyCounty/OregonsCOVID-19TestingandOutcomesbyCounty?:display_count=y&:toolbar=n&:origin=viz_share_link&:showShareOptions=false
+
+- name: quaternary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19Update/HospitalCapacity
+
+- name: quinary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonHealthAuthorityCOVID-19DataDashboard/COVID-19EPITested
+

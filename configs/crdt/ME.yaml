@@ -1,0 +1,9 @@
+state: ME
+
+links: 
+- name: primary
+  url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml
+
+- name: secondary
+  url: https://public.tableau.com/views/covid-19-maine-cdc-dashboard/6_COVID-19databyrace?%3AshowVizHome=no&%3Aembed=true
+

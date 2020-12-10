@@ -1,0 +1,15 @@
+state: MN
+
+links: 
+- name: primary
+  url: https://www.health.state.mn.us/diseases/coronavirus/situation.html
+
+- name: secondary
+  url: https://www.health.state.mn.us/diseases/coronavirus/situation.html
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#accordion div:nth-child(49) .panel-heading p");
+    page.click("#accordion div:nth-child(49) .panel-heading p");
+    await page.waitForDelay(1000);
+    page.done();
+

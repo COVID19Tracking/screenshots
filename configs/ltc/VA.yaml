@@ -1,0 +1,12 @@
+state: VA
+
+links: 
+- name: primary
+  url: https://www.vdh.virginia.gov/coronavirus/coronavirus/covid-19-in-virginia-outbreaks/
+
+- name: secondary
+  url: https://data.virginia.gov/Government/VDH-COVID-19-PublicUseDataset-Outbreaks_By-Date/qddp-x2uu
+
+- name: tertiary
+  url: https://www.vdh.virginia.gov/coronavirus/health-professionals/virginia-long-term-care-task-force/
+

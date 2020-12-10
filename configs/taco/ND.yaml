@@ -1,0 +1,12 @@
+state: ND
+
+links: 
+- name: primary
+  url: https://www.health.nd.gov/diseases-conditions/coronavirus/north-dakota-coronavirus-cases
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(150000);
+    page.done();
+  renderSettings: 
+    maxWait: 180000
+

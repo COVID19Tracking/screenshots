@@ -1,0 +1,18 @@
+state: DC
+
+links: 
+- name: primary
+  url: https://coronavirus.dc.gov/page/coronavirus-surveillance-data
+
+- name: secondary
+  url: https://coronavirus.dc.gov/page/hospital-status-data
+
+- name: tertiary
+  url: https://microstrategy.dc.gov/MicroStrategyLibrary/app/E52A533B11EA01A28FE80080EFC53DA4/30FE682111EA6FB5A6620080EF357B1F/WEF49494DFBDE44548AFB2A631C5233CC--K46
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("div.mstrd-DossierViewOnboarding-skipBtn");
+    page.click("div.mstrd-DossierViewOnboarding-skipBtn");
+    await page.waitForDelay(5000);
+    page.done();
+
