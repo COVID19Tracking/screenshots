@@ -7,35 +7,18 @@ from pytz import timezone
 
 from loguru import logger
 import requests
+import yaml
 
 
 class Screenshotter():
 
-    def __init__(self, local_dir, s3_backup, phantomjscloud_key, config,
-            dry_run=False, github_config_dir=None):
+    def __init__(self, local_dir, s3_backup, phantomjscloud_key, config_dir=None, dry_run=False):
         self.phantomjs_url = 'https://phantomjscloud.com/api/browser/v2/%s/' % phantomjscloud_key
         self.local_dir = local_dir
         self.s3_backup = s3_backup
-        self.config = config
+        self.config_dir = config_dir
         self.dry_run = dry_run
-
-        # TODO: this is not being used yet
-        if github_config_dir and github_config_dir not in ['crdt', 'ltc', 'taco']:
-             raise ValueError('If present, github_config_dir must be of crdt, ltc, taco')
-        self.github_config_dir = github_config_dir
-
-
-    def get_state_config(self, state, suffix):
-        # if we have a state config dir, 
-
-        # primary is denoted with no suffix, but the section is called "primary" in the YAML config
-        if suffix == '':
-            return self.config['primary'].get(state)
-        for possible_suffix in ['secondary', 'tertiary', 'quaternary', 'quinary']:
-            if suffix == possible_suffix and self.config[possible_suffix]:
-                return self.config[possible_suffix].get(state)
         
-        return None
 
     # makes a PhantomJSCloud call to data_url and saves the output to specified path
     def save_url_image_to_path(self, state, data_url, path, state_config=None):
@@ -55,6 +38,9 @@ class Screenshotter():
         state_config : dict
             If exists, this is a dict used for denoting phantomJScloud special casing or file type
         """
+        if state == 'NY' and 'tertiary' in path:
+            raise ValueError('testing value error')
+
         logger.info(f"Retrieving {data_url}")
 
         # if we need to just download the file, don't use phantomjscloud
@@ -77,8 +63,9 @@ class Screenshotter():
         if state_config:
             # update data with state_config minus message
             state_config_copy = state_config.copy()
-            message = state_config_copy.pop('message')
-            logger.info(message)
+            message = state_config_copy.pop('message', None)
+            if message:
+                logger.info(message)
             data.update(state_config_copy)
 
         # set maxWait if unset
@@ -109,11 +96,14 @@ class Screenshotter():
                     'Could not retrieve URL %s and response has no metadata. Full response: %s' % (
                         data_url, response.json()))
 
-    def timestamped_filename(self, state, suffix='', fileext='png'):
-        # basename will be e.g. 'CA' if no suffix, or 'CA-secondary' if suffix is 'secondary'
-        state_with_modifier = state if len(suffix) == 0 else '%s-%s' % (state, suffix)
+    def timestamped_filename(self, state, suffix, fileext='png'):
+        # basename will be e.g. 'CA' if suffix is 'primary', or 'CA-secondary' if suffix is 'secondary'
+        state_with_modifier = '%s-%s' % (state, suffix)
         timestamp = datetime.now(timezone('US/Eastern')).strftime("%Y%m%d-%H%M%S")
-        return "%s-%s.%s" % (state_with_modifier, timestamp, fileext)
+        full_path = "%s-%s.%s" % (state_with_modifier, timestamp, fileext)
+
+        # for now, remove the "primary" suffix, but revisit this
+        return full_path.replace('-primary', '')
 
     def get_s3_path(state, suffix='', fileext='png'):
         filename = self.timestamped_filename(state, suffix, fileext=fileext)
@@ -123,36 +113,51 @@ class Screenshotter():
         else:
             return os.path.join('state_screenshots', state, filename)
 
-    def screenshot(self, state, data_url, suffix='', backup_to_s3=False):
-        """Screenshots state data site.
 
-        Parameters
-        ----------
-        state : str
-            Two-letter abbreviation of the state or territory
+    def get_state_config_from_dir(self, state):
+        # Return the full parsed state config from file.
+        config_path = os.path.join(self.config_dir, '%s.yaml' % state.upper())
+        with open(config_path) as f:
+            config = yaml.safe_load(f)
 
-        data_url : str
-            URL containing data site to screenshot
+        assert config['state'] == state.upper()
+        return config
 
-        suffix : str
-            If present, will be used in the resulting local and S3 filename (STATE_suffix)
 
-        backup_to_s3 : bool
-            If true, will push to S3. If false, backup will be only local
-        """
+    # returns a dictionary of screenshot types to error messages, if any
+    def screenshot(self, state, which_screenshot, backup_to_s3=False):
+        # extract state config
+        full_state_config = self.get_state_config_from_dir(state)
+        errors = {}  # will map screenshot name to error message if any
 
-        logger.info(f"Screenshotting {state} {suffix} from {data_url}")
-        state_config = self.get_state_config(state, suffix)
+        # do this for all state screenshots
+        for state_config in full_state_config['links']:
+            suffix = state_config['name']
+            if which_screenshot and which_screenshot != suffix:
+                continue
 
-        # use specified file extension if it exists, otherwise default to .png
-        if state_config and 'file' in state_config:
-            fileext = state_config['file']
-        else:
-            fileext = 'png'
+            # use specified file extension if it exists, otherwise default to .png
+            fileext = state_config['file'] if 'file' in state_config else 'png'
+            timestamped_filename = self.timestamped_filename(state, suffix=suffix, fileext=fileext)
+            local_path = os.path.join(self.local_dir, timestamped_filename)
+            data_url = state_config['url']
+            logger.info(f'Screenshotting {state} {suffix} from {data_url}')
 
-        timestamped_filename = self.timestamped_filename(state, suffix=suffix, fileext=fileext)
-        local_path = os.path.join(self.local_dir, timestamped_filename)
-        self.save_url_image_to_path(state, data_url, local_path, state_config)
-        if backup_to_s3:
-            logger.info(f"push to s3")
-            self.s3_backup.upload_file(local_path, state)
+            # try 4 times in case of intermittent issues
+            err = None
+            for i in range(4):
+                try:
+                    self.save_url_image_to_path(state, data_url, local_path, state_config)
+                    if backup_to_s3:
+                        logger.info('Push to s3')
+                        self.s3_backup.upload_file(local_path, state)
+                    err = None
+                    break
+                except ValueError as e:
+                    logger.error(f'Screenshot {state} {suffix} failed attempt %d' % (i+1))
+                    err = e
+
+            if err:
+                errors[suffix] = err
+
+        return errors

@@ -11,20 +11,11 @@ links:
   url: http://www.salud.gov.pr/Pages/coronavirus.aspx
 
 - name: quaternary
-  url: https://bioseguridad.maps.arcgis.com/apps/opsdashboard/index.html#/3bfb64c9a91944bc8c41edd8ff27e6df
+  url: https://services5.arcgis.com/klquQoHA0q9zjblu/ArcGIS/rest/services/Datos_Totales_View7/FeatureServer/0/query?where=1%3D1&outFields=T_Muertes_COVID_RD%2CT_Muertes_Combinadas%2CT_Pacientes_Int_Covid%2CT_Vent_Covid%2CT_Serologicos_Pos%2CT_Casos_Unicos%2CT_Molecular_Pos%2CT_Fatalidades%2CT_Hospitalizados
   overseerScript: |
     await page.waitForNavigation({
      waitUntil:"domcontentloaded"});
     await page.waitForSelector("#ember906");
     page.click("#ember906");
-    page.done();
-
-- name: quinary
-  url: https://bioseguridad.maps.arcgis.com/apps/opsdashboard/index.html#/3bfb64c9a91944bc8c41edd8ff27e6df
-  overseerScript: |
-    await page.waitForNavigation({
-     waitUntil:"domcontentloaded"});
-    await page.waitForSelector("#ember772");
-    page.click("#ember772");
     page.done();
 

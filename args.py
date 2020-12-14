@@ -65,6 +65,8 @@ screenshot_type_group.add_argument('--quaternary', dest='quaternary', action='st
     default=False, help='Run the quaternary screenshot')
 screenshot_type_group.add_argument('--quinary', dest='quinary', action='store_true',
     default=False, help='Run the quinary screenshot')
+screenshot_type_group.add_argument('--which-screenshot', default='',
+    help='If present, takes only the corresponding named screenshot from the config')
 
 # Args relating to Slack notifications
 parser.add_argument(

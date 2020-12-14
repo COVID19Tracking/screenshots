@@ -14,90 +14,32 @@ from screenshotter import Screenshotter
 from utils import S3Backup, SlackNotifier
 
 
-def load_state_urls(args):
-    # get states info from API
-    url = 'https://covidtracking.com/api/states/info.csv'
-    content = requests.get(url).content
-    state_info_df = pd.read_csv(io.StringIO(content.decode('utf-8')))
-    
+_ALL_STATES = [
+    'AK', 'AL', 'AR', 'AS', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'GU', 'HI', 'IA', 'ID',
+    'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MP', 'MS', 'MT', 'NC', 'ND',
+    'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX',
+    'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY']
+
+
+def states_from_args(args):
     # if states are user-specified, snapshot only those
     if args.states:
         logger.info(f'Snapshotting states {args.states}')
-        states_list = args.states.split(',')
-        state_info_df = state_info_df[state_info_df.state.isin(states_list)]
+        return args.states.split(',')
     else:
         logger.info('Snapshotting all states')
-
-    state_urls = {}
-    for idx, r in state_info_df.iterrows():
-        state_urls[r["state"]] = {
-            'primary': r["covid19Site"],
-            'secondary': r["covid19SiteSecondary"],
-            'tertiary': r["covid19SiteTertiary"],
-            'quaternary': r["covid19SiteQuaternary"],
-            'quinary': r["covid19SiteQuinary"],
-        }
-
-    return state_urls
+        return _ALL_STATES
 
 
-def load_other_urls_from_spreadsheet(args):
-    if args.ltc_urls:
-        csv_url = 'https://docs.google.com/spreadsheets/d/1kB6lT0n4wJ2l8uP-lIOZyIVWCRJTPWLGf3Q4ZCC6pMQ/gviz/tq?tqx=out:csv&sheet=LTC_Screencap_Links'
-    elif args.crdt_urls:
-        csv_url =  'https://docs.google.com/spreadsheets/d/1lfwMmo7q-faKfvh6phxQs9rEJXVnnyISFtiVbq9XJ7U/gviz/tq?tqx=out:csv&sheet=Sheet1' 
-    urls_df = pd.read_csv(csv_url)
-
-    # if states are user-specified, snapshot only those
-    if args.states:
-        logger.info(f'Snapshotting states {args.states}')
-        states_list = args.states.split(',')
-        urls_df = urls_df[urls_df.State.isin(states_list)]
-    else:
-        logger.info('Snapshotting all states')
-
-    state_urls = {}
-    for idx, r in urls_df.iterrows():
-        state_urls[r['State']] = {
-            'primary': r['Link 1'],
-            'secondary': r['Link 2'],
-            'tertiary': r['Link 3'],
-        }
-
-    return state_urls
-
-
-def config_from_args(args):
-    # load the config for this run
+def config_dir_from_args(args):
     if args.core_urls:
-        config_basename = 'core_screenshot_config.yaml'
+        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'taco')
     elif args.crdt_urls:
-        config_basename = 'crdt_screenshot_config.yaml'
+        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'crdt')
     elif args.ltc_urls:
-        config_basename = 'ltc_screenshot_config.yaml'
+        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'ltc')
 
-    screenshot_config_path = os.path.join(os.path.dirname(__file__), 'configs', config_basename)
-    with open(screenshot_config_path) as f:
-        config = yaml.safe_load(f)
-
-    return config
-
-
-def github_configs_from_args(args):
-    # load the state configs for this run
-    if args.core_urls:
-        config_basename = 'core_screenshot_config.yaml'
-    elif args.crdt_urls:
-        config_basename = 'crdt_screenshot_config.yaml'
-    elif args.ltc_urls:
-        config_basename = 'ltc_screenshot_config.yaml'
-
-
-def state_urls_from_args(args):
-    if args.core_urls:
-        return load_state_urls(args)
-    else:
-        return load_other_urls_from_spreadsheet(args)
+    return config_dir
 
 
 def slack_notifier_from_args(args):
@@ -120,13 +62,13 @@ def run_type_from_args(args):
 # This is a special-case function: we're screenshotting IHS data separately for now
 def screenshot_IHS(args):
     s3 = S3Backup(bucket_name=args.s3_bucket, s3_subfolder='IHS')
+    config_dir = config_dir_from_args(args)
     screenshotter = Screenshotter(
         local_dir=args.temp_dir, s3_backup=s3,
-        phantomjscloud_key=args.phantomjscloud_key, config=config_from_args(args),
-        dry_run=args.dry_run)
-    data_url = 'https://www.ihs.gov/coronavirus/'
+        phantomjscloud_key=args.phantomjscloud_key,
+        dry_run=args.dry_run, config_dir=config_dir)
     try:
-        screenshotter.screenshot('IHS', data_url, suffix='', backup_to_s3=args.push_to_s3)
+        screenshotter.screenshot('IHS', 'primary', backup_to_s3=args.push_to_s3)
     except ValueError as e:
         logger.error('IHS screenshot failed: %s' % e)
 
@@ -136,67 +78,25 @@ def main(args_list=None):
         args_list = sys.argv[1:]
     args = screenshots_parser.parse_args(args_list)
     s3 = S3Backup(bucket_name=args.s3_bucket, s3_subfolder=args.s3_subfolder)
-
-    # check if state-specific YAML config exists; if not, we fall back to getting URLs from the API
-
-    config = config_from_args(args)
-    state_urls = state_urls_from_args(args)
+    config_dir = config_dir_from_args(args)
     slack_notifier = slack_notifier_from_args(args)
     run_type = run_type_from_args(args)
     screenshotter = Screenshotter(
         local_dir=args.temp_dir, s3_backup=s3,
-        phantomjscloud_key=args.phantomjscloud_key, config=config, dry_run=args.dry_run)
+        phantomjscloud_key=args.phantomjscloud_key,
+        dry_run=args.dry_run, config_dir=config_dir)
 
     failed_states = []
     slack_failure_messages = []
-    for state, urls in state_urls.items():
 
-        # returns True if this particular screenshotter run succeeded, false otherwise: exists to
-        # not crash on exceptions, and keep track of which screenshots failed
-        def screenshotter_succeeded(data_url, suffix):
-            if pd.isnull(data_url):
-                return True  # trivial success
-
-            # try 4 times in case of intermittent issues
-            err = None
-            for i in range(4):
-                try:
-                    screenshotter.screenshot(
-                        state, data_url, suffix=suffix,
-                        backup_to_s3=args.push_to_s3)
-                    return True
-                except ValueError as e:
-                    err = e
-                    logger.error(e)
-
-            # if we're here, all attempts failed, notify Slack
+    for state in states_from_args(args):
+        errors = screenshotter.screenshot(
+            state, args.which_screenshot, backup_to_s3=args.push_to_s3)
+        for suffix, error in errors.items():
+            logger.error(f'Error in {state} {suffix}: {error}')
+            failed_states.append((state, suffix))
             if slack_notifier:
-                suffix_str = suffix or 'primary'
-                slack_failure_messages.append(
-                    f"Error in {state} {suffix_str}: {err}")
-            return False
-
-        # Retrieve set of URLs to load. If user didn't specify screenshot(s) to take, take them all
-        if not (args.primary or args.secondary or args.tertiary or args.quaternary or args.quinary):
-            urls_with_suffixes = [
-                (urls.get('primary'), ''),
-                (urls.get('secondary'), 'secondary'),
-                (urls.get('tertiary'), 'tertiary'),
-                (urls.get('quaternary'), 'quaternary'),
-                (urls.get('quinary'), 'quinary'),
-            ]
-        else:
-            urls_with_suffixes = []
-            for attr_name in ['primary', 'secondary', 'tertiary', 'quaternary', 'quinary']:
-                if getattr(args, attr_name) is True:
-                    suffix = '' if attr_name == 'primary' else attr_name
-                    urls_with_suffixes.append((urls.get(attr_name), suffix))
-
-        # Take screenshots, keeping track of which ones failed
-        for (data_url, suffix) in urls_with_suffixes:
-            success = screenshotter_succeeded(data_url, suffix)
-            if not success:
-                failed_states.append((state, suffix or 'primary'))
+                slack_failure_messages.append(f'Error in {state} {suffix}: {error}')
 
     if failed_states:
         failed_states_str = ', '.join([':'.join(x) for x in failed_states])
@@ -208,6 +108,7 @@ def main(args_list=None):
             thread_ts = slack_response.get('ts')
             for detailed_message in slack_failure_messages:
                 slack_notifier.notify_slack(detailed_message, thread_ts=thread_ts)
+
     else:
         logger.info("All attempted states successfully screenshotted")
 

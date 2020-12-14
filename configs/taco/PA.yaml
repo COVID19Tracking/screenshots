@@ -21,6 +21,3 @@ links:
     await page.waitForDelay(30000);
     page.done();
 
-- name: tertiary
-  url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/Coronavirus.aspx
-
