@@ -3,4 +3,5 @@ state: CT
 links: 
 - name: primary
   url: https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary12142020.pdf
+  message: downloading pdf for CT
 

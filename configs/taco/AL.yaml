@@ -13,6 +13,7 @@ links:
     page.click("span:nth-of-type(13)");
     await page.waitForDelay(1000);
     page.done();
+  message: custom click logic for AL secondary dashboard
 
 - name: tertiary
   url: https://services7.arcgis.com/4RQmZZ0yaZkGR1zy/arcgis/rest/services/HospitalizedPatientTemporal_READ_ONLY/FeatureServer/1/query?where=1%3D1&orderbyfields=DateTxt+desc&outFields=%2A&resultRecordCount=1

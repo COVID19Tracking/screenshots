@@ -19,4 +19,5 @@ links:
     page.mouse.click(920, 406);
     await page.waitForDelay(8000);
     page.done();
+  message: hospitalizations for NV quaternary
 

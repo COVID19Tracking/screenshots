@@ -7,6 +7,7 @@ links:
     page.manualWait();
     await page.waitForDelay(60000);
     page.done();
+  message: waiting 60 sec to load MI
 
 - name: secondary
   url: https://www.michigan.gov/coronavirus/0,9753,7-406-98159-523641--,00.html
@@ -20,4 +21,5 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting for MI quaternary
 

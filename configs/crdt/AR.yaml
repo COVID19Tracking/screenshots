@@ -12,6 +12,7 @@ links:
     page.click("#ember366");
     await page.waitForDelay(5000);
     page.done();
+  message: custom tab click logic for AR secondary, wait 5 sec
 
 - name: tertiary
   url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html?rand_1595871760485=1595871760485#/1d80295a97054631a5c35d0556803f16
@@ -21,4 +22,5 @@ links:
     page.click("#ember376");
     await page.waitForDelay(5000);
     page.done();
+  message: custom tab click logic for AR tertiary, wait 5 sec
 

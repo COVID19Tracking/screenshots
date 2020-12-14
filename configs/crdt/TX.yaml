@@ -3,6 +3,7 @@ state: TX
 links: 
 - name: primary
   url: https://dshs.texas.gov/coronavirus/TexasCOVID19CaseCountData.xlsx
+  message: downloading xlsx for TX
 
 - name: secondary
   url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83

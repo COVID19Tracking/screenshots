@@ -9,6 +9,7 @@ links:
     page.click("[href='#testing1']");
     await page.waitForDelay(30000);
     page.done();
+  message: clicking on testing table for MN
 
 - name: secondary
   url: https://mn.gov/covid19/data/response-prep/response-capacity.jsp
@@ -20,4 +21,5 @@ links:
     });
     await page.waitForDelay(5000);
     page.done();
+  message: clear the "non-covid checkbox for hospitalizations"
 

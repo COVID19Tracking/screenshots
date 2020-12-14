@@ -15,4 +15,5 @@ links:
     page.click("a[ctpclickhere]");
     await page.waitForDelay(20000);
     page.done();
+  message: expanding hospital section, also waiting an extra 20 seconds to make sure other elements render
 

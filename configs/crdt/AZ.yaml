@@ -10,6 +10,7 @@ links:
     await page.waitForFunction(()=>document.querySelector("#subcontent").textContent!=="");
     await page.waitForDelay(10000);
     page.done();
+  message: custom mouseover logic for AZ, wait 10 sec
 
 - name: secondary
   url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
@@ -20,6 +21,7 @@ links:
     await page.waitForFunction(()=>document.querySelector("#subcontent").textContent!=="");
     await page.waitForDelay(10000);
     page.done();
+  message: custom click logic for AZ secondary, wait 10 sec
 
 - name: tertiary
   url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
@@ -30,4 +32,5 @@ links:
     await page.waitForFunction(()=>document.querySelector("#subcontent h2").textContent=="COVID-19 Deaths");
     await page.waitForDelay(10000);
     page.done();
+  message: custom mouseover logic for AZ tertiary, wait 10 sec
 

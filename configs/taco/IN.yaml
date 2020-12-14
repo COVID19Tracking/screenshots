@@ -13,6 +13,7 @@ links:
     viewport:
       height: 13000
       width: 1400
+  message: clicking button to get rid of popup, using viewport height 8500 for IN
 
 - name: secondary
   url: https://www.regenstrief.org/covid-dashboard/
@@ -20,6 +21,7 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 sec to load IN secondary
 
 - name: tertiary
   url: https://hub.mph.in.gov/dataset/covid-19-beds-and-vents/resource/882a7426-886f-48cc-bbe0-a8d14e3012e4/view/05961851-c7ab-4ac7-92bf-fdf9881ecdab
@@ -33,4 +35,5 @@ links:
     page.mouse.move(1, 1);
     await page.waitForDelay(5000);
     page.done();
+  message: expand the columns in the data table
 

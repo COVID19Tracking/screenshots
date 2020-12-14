@@ -13,6 +13,7 @@ links:
     viewport:
       height: 1400
       width: 3000
+  message: clicking on tab 11 for AL
 
 - name: secondary
   url: http://www.alabamapublichealth.gov/covid19/index.html

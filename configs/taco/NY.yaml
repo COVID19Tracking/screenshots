@@ -6,12 +6,14 @@ links:
   renderSettings: 
     viewport:
       width: 5000
+  message: using viewport width 5000 for NY
 
 - name: secondary
   url: https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Fatalities?%3Aembed=yes&%3Atoolbar=no&%3Atabs=n
   renderSettings: 
     viewport:
       width: 5000
+  message: using viewport width 5000 for NY
 
 - name: tertiary
   url: https://www.governor.ny.gov/news
@@ -23,6 +25,7 @@ links:
      waitUntil:"domcontentloaded"});
     await page.render.screenshot();
     page.done();
+  message: click on the first "gov cuomo updates..." link, which should be the latest press release
 
 - name: quaternary
   url: https://forward.ny.gov/daily-hospitalization-summary-region
@@ -32,6 +35,7 @@ links:
     page.mouse.move(1061, 1204);
     await page.waitForDelay(10000);
     page.done();
+  message: hover over hospitalizations for NY quaternary
 
 - name: quinary
   url: https://forward.ny.gov/daily-hospitalization-summary-region
@@ -41,4 +45,5 @@ links:
     page.mouse.move(1061, 1212);
     await page.waitForDelay(10000);
     page.done();
+  message: hover over ICU for NY quinary
 

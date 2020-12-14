@@ -6,4 +6,5 @@ links:
 
 - name: secondary
   url: https://chfs.ky.gov/agencies/dph/covid19/COVID19DailyReport.pdf
+  message: downloading PDF for KY secondary
 

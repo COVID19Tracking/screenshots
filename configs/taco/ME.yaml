@@ -16,6 +16,7 @@ links:
     page.click("a[ctpclickhere]");
     await page.waitForDelay(15000);
     page.done();
+  message: expanding 'Table of All Reported COVID-19 Tests' section
 
 - name: tertiary
   url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml
@@ -29,6 +30,7 @@ links:
     page.click("a[ctpclickhere]");
     await page.waitForDelay(15000);
     page.done();
+  message: expanding 'Table of All Reported COVID-19 Tests' section
 
 - name: quaternary
   url: https://analytics.maine.gov/t/CDCExternal/views/covid-19-maine-cdc-dashboard-nav-buttons/1_Casetrendsbycounty?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fanalytics.maine.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:showAppBanner=false&:display_spinner=no&:loadOrderID=1
@@ -46,6 +48,7 @@ links:
     page.click("span[ctpclickhere2]");
     await page.waitForDelay(10000);
     page.done();
+  message: clicking confirmed cases in dropdown
 
 - name: quinary
   url: https://analytics.maine.gov/t/CDCExternal/views/covid-19-maine-cdc-dashboard-nav-buttons/1_Casetrendsbycounty?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fanalytics.maine.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:showAppBanner=false&:display_spinner=no&:loadOrderID=1
@@ -63,4 +66,5 @@ links:
     page.click("span[ctpclickhere2]");
     await page.waitForDelay(10000);
     page.done();
+  message: clicking probable cases in dropdown
 

@@ -3,4 +3,5 @@ state: IN
 links: 
 - name: primary
   url: https://hub.mph.in.gov/dataset/62ddcb15-bbe8-477b-bb2e-175ee5af8629/resource/2538d7f1-391b-4733-90b3-9e95cd5f3ea6/download/covid_report_demographics.xlsx
+  message: downloading xlsx for IN
 

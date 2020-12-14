@@ -7,6 +7,7 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 seconds for IA
 
 - name: secondary
   url: https://coronavirus.iowa.gov/pages/outcome-analysis-deaths
@@ -14,4 +15,5 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 seconds for IA secondary
 

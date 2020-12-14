@@ -12,6 +12,7 @@ links:
     page.click("[aria-label='Go to entry 2: Cases - Demographics']", delay=500);
     await page.waitForDelay(20000);
     page.done();
+  message: custom clicking for MO secondary, wait 10 sec
 
 - name: tertiary
   url: http://mophep.maps.arcgis.com/apps/MapSeries/index.html?appid=8e01a5d8d8bd4b4f85add006f9e14a9d#map
@@ -21,4 +22,5 @@ links:
     page.click("[aria-label='Go to entry 6: Deaths']");
     await page.waitForDelay(10000);
     page.done();
+  message: custom clicking for MO tertiary, wait 10 sec
 

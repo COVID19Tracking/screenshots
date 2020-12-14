@@ -15,6 +15,7 @@ links:
     page.click(".tab-title:nth-of-type(2)");
     await page.waitForDelay(30000);
     page.done();
+  message: custom click logic for MP tertiary dashboard
 
 - name: quaternary
   url: https://cnmichcc.maps.arcgis.com/apps/opsdashboard/index.html#/4061b674fc964efe84f7774b7979d2b5
@@ -24,4 +25,5 @@ links:
     page.click(".tab-title:nth-of-type(3)");
     await page.waitForDelay(30000);
     page.done();
+  message: custom click logic for MP quaternary dashboard
 

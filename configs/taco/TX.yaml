@@ -7,12 +7,14 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 sec to load TX
 
 - name: secondary
   url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/0d8bdf9be927459d9cb11b9eaef6101f
 
 - name: tertiary
   url: https://www.dshs.texas.gov/coronavirus/TexasCOVID-19HospitalizationsOverTimebyTSA.xlsx
+  message: downloading Excel for TX tertiary
 
 - name: quaternary
   url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/0d8bdf9be927459d9cb11b9eaef6101f
@@ -28,4 +30,5 @@ links:
   renderSettings: 
     viewport:
       width: 2000
+  message: clicking on "Hospitals - Statewide" tab. Also widening viewport so that tab is visible.
 

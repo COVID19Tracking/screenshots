@@ -14,4 +14,5 @@ links:
     viewport:
       height: 3000
       width: 1400
+  message: clicking button to get rid of popup for OK, then waiting 10 sec. Also larger viewport
 

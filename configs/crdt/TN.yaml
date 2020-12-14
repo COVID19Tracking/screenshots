@@ -6,4 +6,5 @@ links:
 
 - name: secondary
   url: https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-RaceEthSex.XLSX
+  message: downloading xlsx for TN secondary
 

@@ -7,6 +7,7 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 sec to load AK primary
 
 - name: secondary
   url: https://experience.arcgis.com/experience/ed1c874ca60b4c15ab09095a070065ca

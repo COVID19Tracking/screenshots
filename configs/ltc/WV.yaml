@@ -11,4 +11,5 @@ links:
     viewport:
       height: 4000
       width: 1400
+  message: waiting 30 seconds for WV, and using larger viewport
 

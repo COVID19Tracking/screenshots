@@ -7,10 +7,12 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 sec to load MT
 
 - name: secondary
   url: https://dphhs.mt.gov/publichealth/cdepi/diseases/coronavirusmt/demographics
 
 - name: tertiary
   url: https://dphhs.mt.gov/Portals/85/publichealth/documents/CDEpi/DiseasesAtoZ/2019-nCoV/Status%20Update%20Data%20Report_12132020.pdf
+  message: downloading pdf for MT, exact url is consecrated.
 

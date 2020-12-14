@@ -3,4 +3,5 @@ state: GA
 links: 
 - name: primary
   url: https://ga-covid19.ondemand.sas.com/docs/ga_covid_data.zip
+  message: downloading zip for GA
 

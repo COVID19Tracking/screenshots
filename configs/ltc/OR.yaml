@@ -6,4 +6,5 @@ links:
 
 - name: secondary
   url: https://www.oregon.gov/dhs/COVID-19/Documents/Confirmed-Facilities-COVID-19.pdf
+  message: downloading pdf for OR secondary
 

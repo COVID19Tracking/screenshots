@@ -7,6 +7,7 @@ links:
     viewport:
       height: 3000
       width: 1400
+  message: using viewport height 3000 for CA
 
 - name: secondary
   url: https://public.tableau.com/views/COVID-19CasesDashboard_15931020425010/Cases?:embed=y&:showVizHome=no

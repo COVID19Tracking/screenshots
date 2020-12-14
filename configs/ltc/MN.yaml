@@ -12,4 +12,5 @@ links:
     page.click("#accordion div:nth-child(49) .panel-heading p");
     await page.waitForDelay(1000);
     page.done();
+  message: clicking on a dropdown for MN secondary
 

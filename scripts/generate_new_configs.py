@@ -88,6 +88,9 @@ def output_yamls(team, state_urls, config_basename):
                         outfile.write("  renderSettings: \n    " + yaml.dump(
                             existing_state_config["renderSettings"], default_flow_style=False, indent=6))
 
+                    if "message" in existing_state_config:
+                        outfile.write("  message: %s\n" % existing_state_config["message"])
+
                 outfile.write("\n")
     
 

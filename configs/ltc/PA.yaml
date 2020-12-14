@@ -7,10 +7,13 @@ links:
     viewport:
       height: 7000
       width: 1400
+  message: using viewport height 7000 for PA
 
 - name: secondary
   url: https://www.health.pa.gov/topics/Documents/Diseases%20and%20Conditions/COVID-19%20LTCF%20Data_7-20-2020.xlsx
+  message: downloading xlsx for PA secondary
 
 - name: tertiary
   url: https://www.health.pa.gov/topics/Documents/Diseases%20and%20Conditions/DHS%20Facility%20COVID-19%20Totals_7-20-2020.xlsx
+  message: downloading xlsx for PA tertiary
 

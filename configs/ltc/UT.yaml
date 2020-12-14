@@ -11,4 +11,5 @@ links:
     clipRectangle:
       height: 1500
       width: 1400
+  message: UT dashboard doesn't render in phantomjscloud unless we set clipRectangle; wait 40 sec
 

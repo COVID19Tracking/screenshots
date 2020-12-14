@@ -12,4 +12,5 @@ links:
   renderSettings: 
     viewport:
       width: 1600
+  message: forcing wider viewPort to avoid clipping
 

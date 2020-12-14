@@ -6,4 +6,5 @@ links:
 
 - name: secondary
   url: https://files.nc.gov/covid/documents/dashboard/Weekly-COVID19-Ongoing-Outbreaks.pdf
+  message: downloading pdf for NC secondary
 

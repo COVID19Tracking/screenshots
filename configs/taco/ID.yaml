@@ -7,6 +7,7 @@ links:
     viewport:
       height: 3000
       width: 1400
+  message: using viewport height 3000 for ID
 
 - name: secondary
   url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Testing?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y
@@ -15,6 +16,7 @@ links:
     await page.waitForSelector("#tabZoneId10");
     await page.hover("#tabZoneId10");
     page.done();
+  message: custom mouseover logic for ID secondary dashboard
 
 - name: tertiary
   url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Demographics?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y
@@ -26,6 +28,7 @@ links:
     await page.waitForDelay(1000);
     await page.render.screenshot();
     page.done();
+  message: hover logic to show confirmed/probable cases split on statewide demographics dash.
 
 - name: quaternary
   url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Hospitalizations?%3Aembed=y&%3Aembed=y&%3AshowVizHome=no&%3AshowVizHome=n&%3Adisplay_count=y&%3Adisplay_static_image=y&%3Alanguage=en&%3AapiID=host0#navType=0&navSrc=Parse

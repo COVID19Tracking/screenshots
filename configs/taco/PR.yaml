@@ -18,4 +18,5 @@ links:
     await page.waitForSelector("#ember906");
     page.click("#ember906");
     page.done();
+  message: click button for PR recoveries ("Convalecientes")
 

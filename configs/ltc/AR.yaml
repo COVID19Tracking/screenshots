@@ -13,6 +13,7 @@ links:
     viewport:
       height: 1400
       width: 3000
+  message: clicking on "COVID-19 Deaths" for AR
 
 - name: secondary
   url: https://experience.arcgis.com/experience/c2ef4a4fcbe5458fbf2e48a21e4fece9

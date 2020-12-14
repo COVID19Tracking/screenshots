@@ -9,6 +9,7 @@ links:
     page.click(".tabStoryPoint.tab-widget:nth-of-type(2)");
     await page.waitForDelay(2000);
     page.done();
+  message: clicking on "Statewide Demographics" for ID, wait 2 sec
 
 - name: secondary
   url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard_V2/Story1?%3AshowVizHome=no
@@ -18,4 +19,5 @@ links:
     page.click(".tabStoryPoint.tab-widget:nth-of-type(7)");
     await page.waitForDelay(2000);
     page.done();
+  message: clicking on "Deaths Demographics" for ID secondary, wait 2 sec
 

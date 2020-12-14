@@ -3,4 +3,5 @@ state: WA
 links: 
 - name: primary
   url: https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/Weekly-COVID-19-Long-Term-Care-Report.pdf
+  message: downloading pdf for WA
 

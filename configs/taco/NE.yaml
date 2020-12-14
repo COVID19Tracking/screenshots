@@ -7,6 +7,7 @@ links:
     viewport:
       height: 5000
       width: 1400
+  message: using viewport height 5000 for NE
 
 - name: secondary
   url: https://gis.ne.gov/enterprise/rest/services/Covid19MapV5/MapServer/11/query?where=1%3D1&outFields=%2A&orderByFields=LAB_REPORT_DATE+desc&resultRecordCount=1&f=json

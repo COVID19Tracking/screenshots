@@ -15,4 +15,5 @@ links:
     page.click("div.mstrd-DossierViewOnboarding-skipBtn");
     await page.waitForDelay(5000);
     page.done();
+  message: clicking skip to get rid of popup for DC, waiting 5 sec
 

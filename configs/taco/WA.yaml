@@ -9,6 +9,7 @@ links:
     page.done();
   renderSettings: 
     maxWait: 90000
+  message: waiting 60 sec to load WA
 
 - name: secondary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
@@ -16,6 +17,7 @@ links:
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
+  message: waiting 30 sec to load WA secondary
 
 - name: tertiary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard

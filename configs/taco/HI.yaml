@@ -14,6 +14,7 @@ links:
     page.click("span.ember-view.tab-title:nth-of-type(2)");
     await page.waitForDelay(10000);
     page.done();
+  message: clicking on 'Hospitalization' tab for HI tertiary
 
 - name: quaternary
   url: https://hiema.maps.arcgis.com/apps/opsdashboard/index.html#/9a19e1adeceb46c58185cb0396faf36b
@@ -22,6 +23,7 @@ links:
     page.click("span.ember-view.tab-title:nth-of-type(3)");
     await page.waitForDelay(10000);
     page.done();
+  message: clicking on 'ICU Beds and Ventilators' tab for HI quaternary
 
 - name: quinary
   url: https://hawaiicovid19.com/dashboard/
@@ -31,4 +33,5 @@ links:
     page.done();
   renderSettings: 
     maxWait: 90000
+  message: adding manual wait for HI of 80 seconds and max wait
 

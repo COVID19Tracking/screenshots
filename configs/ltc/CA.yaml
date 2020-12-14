@@ -7,7 +7,9 @@ links:
     viewport:
       height: 8500
       width: 1400
+  message: using viewport height 8500 for CA
 
 - name: secondary
   url: https://www.cdss.ca.gov/#covid19
+  message: downloading pdf for CA secondary
 

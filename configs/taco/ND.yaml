@@ -9,4 +9,5 @@ links:
     page.done();
   renderSettings: 
     maxWait: 180000
+  message: waiting for 150 seconds to load ND
 

@@ -7,6 +7,7 @@ links:
     viewport:
       height: 6500
       width: 1400
+  message: using viewport height 6500 for CA
 
 - name: secondary
   url: https://covid19.ca.gov/

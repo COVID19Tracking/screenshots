@@ -19,4 +19,5 @@ links:
     i++) {
       await page.keyboard.down("ArrowRight");
     } page.done();
+  message: Scroll all the way to the right in the data table so we can see the most recent day's column
 

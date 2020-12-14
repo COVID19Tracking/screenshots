@@ -11,6 +11,7 @@ links:
     viewport:
       height: 3000
       width: 1400
+  message: adding manual wait and using viewport height 3000 for IA
 
 - name: secondary
   url: https://coronavirus.iowa.gov/pages/case-counts
@@ -18,6 +19,7 @@ links:
     page.manualWait();
     await page.waitForDelay(60000);
     page.done();
+  message: adding manual wait for IA secondary
 
 - name: tertiary
   url: https://coronavirus.iowa.gov/pages/rmcc-data
@@ -25,6 +27,7 @@ links:
     page.manualWait();
     await page.waitForDelay(45000);
     page.done();
+  message: wait for IA tertiary
 
 - name: quaternary
   url: https://coronavirus.iowa.gov/pages/serology-testing
@@ -32,4 +35,5 @@ links:
     page.manualWait();
     await page.waitForDelay(45000);
     page.done();
+  message: wait for IA quaternary
 

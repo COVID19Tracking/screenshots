@@ -16,6 +16,7 @@ links:
     page.click("button[ctpclickhere]");
     await page.waitForDelay(5000);
     page.done();
+  message: clicking button to get rid of popup for OR, click "Demographics, Hospital Capacity and Testing Tables", waiting 5 sec
 
 - name: secondary
   url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19Update/CaseandTesting

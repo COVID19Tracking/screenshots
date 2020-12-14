@@ -9,6 +9,7 @@ links:
     page.click(".congregate-settings");
     await page.waitForDelay(5000);
     page.done();
+  message: clicking on "congregate settings" for AZ, wait 5 sec
 
 - name: secondary
   url: https://phdata.maricopa.gov/Dashboard/e10a16d8-921f-4aac-b921-26d95e638a45?e=false&vo=viewonly
