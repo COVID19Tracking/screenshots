@@ -39,14 +39,12 @@ class Screenshotter():
             If exists, this is a dict used for denoting phantomJScloud special casing or file type
         """
 
-        # if dynamic, resolve the data_url first
-        if 'eval' in state_config:
-            data_url = eval(data_url)
-
-        logger.info(f"Retrieving {data_url}")
-
         # if we need to just download the file, don't use phantomjscloud
         if state_config and state_config.get('file'):
+            if self.dry_run:
+                logger.warning(f'Dry run: Downloading file from {data_url}')
+                return
+
             logger.info(f"Downloading file from {data_url}")
             response = requests.get(data_url)
             if response.status_code == 200:
@@ -55,8 +53,9 @@ class Screenshotter():
                 return
             else:
                 logger.error(f'Response status code: {response.status_code}')
-                raise ValueError(f'Could not retrieve URL: {data_url}')
+                raise ValueError(f'Could not download data from URL: {data_url}')
 
+        logger.info(f"Retrieving {data_url}")
         data = {
             'url': data_url,
             'renderType': 'png',
@@ -144,6 +143,12 @@ class Screenshotter():
             timestamped_filename = self.timestamped_filename(state, suffix=suffix, fileext=fileext)
             local_path = os.path.join(self.local_dir, timestamped_filename)
             data_url = state_config['url']
+
+            # if dynamic, resolve the data_url first
+            if 'eval' in state_config:
+                logger.info(f'Evaluating {state} {suffix} first: {data_url}')
+                data_url = eval(data_url)
+
             logger.info(f'Screenshotting {state} {suffix} from {data_url}')
 
             # try 4 times in case of intermittent issues
