@@ -6,6 +6,7 @@ links:
 
 - name: secondary
   url: https://www.nh.gov/covid19/documents/case-summary.pdf
+  file: pdf
   message: downloading pdf
 
 - name: tertiary

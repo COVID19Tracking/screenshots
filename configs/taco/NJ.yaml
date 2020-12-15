@@ -3,6 +3,14 @@ state: NJ
 links: 
 - name: primary
   url: https://covid19.nj.gov/#live-updates
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    await page.waitForSelector("button#overlay-close");
+    page.click("button#overlay-close");
+    await page.waitForDelay(30000);
+    page.done();
+  message: close the overlay
 
 - name: secondary
   url: https://maps.arcgis.com/apps/MapSeries/index.html?appid=c2efd1898e48452e83d7218329e953d7&entry=2

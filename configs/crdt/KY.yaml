@@ -3,5 +3,6 @@ state: KY
 links: 
 - name: primary
   url: https://chfs.ky.gov/agencies/dph/covid19/COVID19DailyReport.pdf
+  file: pdf
   message: downloading pdf for KY
 

@@ -7,7 +7,7 @@ links:
     page.manualWait();
     await page.waitForDelay(150000);
     page.done();
-  renderSettings: 
+  requestSettings: 
     maxWait: 180000
   message: waiting for 150 seconds to load ND
 

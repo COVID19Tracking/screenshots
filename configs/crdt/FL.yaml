@@ -3,6 +3,7 @@ state: FL
 links: 
 - name: primary
   url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/cases-monitoring-and-pui-information/state-report/state_reports_latest.pdf
+  file: pdf
   message: downloading pdf for FL
 
 - name: secondary

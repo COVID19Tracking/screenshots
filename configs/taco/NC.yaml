@@ -6,6 +6,7 @@ links:
 
 - name: secondary
   url: https://files.nc.gov/covid/documents/dashboard/Weekly-COVID19-Patients-Presumed-to-be-Recovered.pdf
+  file: pdf
   message: downloading pdf
 
 - name: tertiary

@@ -9,5 +9,6 @@ links:
 
 - name: tertiary
   url: https://docs.google.com/spreadsheets/d/1c2QrNMz8pIbYEKzMJL7Uh2dtThOJa2j1sSMwiDo5Gz4/gviz/tq?tqx=out:csv&sheet=1592746937
+  file: csv
   message: downloading CSV for RI tertiary
 

@@ -3,5 +3,6 @@ state: NY
 links: 
 - name: primary
   url: https://www.health.ny.gov/statistics/diseases/covid-19/fatalities_nursing_home_acf.pdf
+  file: pdf
   message: downloading pdf for NY
 

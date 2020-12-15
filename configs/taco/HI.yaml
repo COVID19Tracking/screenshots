@@ -31,7 +31,7 @@ links:
     page.manualWait();
     await page.waitForDelay(80000);
     page.done();
-  renderSettings: 
+  requestSettings: 
     maxWait: 90000
   message: adding manual wait for HI of 80 seconds and max wait
 

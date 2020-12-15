@@ -5,23 +5,59 @@ links:
   url: https://www.doh.wa.gov/Emergencies/NovelCoronavirusOutbreak2020COVID19/DataDashboard
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(60000);
+    await page.waitForSelector("[href='#pnlHospAndIcuTbl']");
+    page.click("[href='#pnlHospAndIcuTbl']");
+    await page.waitForDelay(120000);
     page.done();
-  renderSettings: 
-    maxWait: 90000
-  message: waiting 60 sec to load WA
+  requestSettings: 
+    maxWait: 120000
+  message: clicking on Ventilator data and waiting 120 sec to load WA
 
 - name: secondary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
+    await page.waitForDelay(60000);
     page.done();
-  message: waiting 30 sec to load WA secondary
+  message: waiting 60 sec to load WA secondary
 
 - name: tertiary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'Healthcare')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(40000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'Percent of all staffed acute care beds')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1");
+    });
+    page.click("span[ctpclickhere1]");
+    await page.waitForDelay(60000);
+    page.done();
+  requestSettings: 
+    maxWait: 180000
+  message: clicking on buttons WA tertiary
 
 - name: quaternary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'Healthcare')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(40000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'staffed beds occupied by COVID-19')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1");
+    });
+    page.click("span[ctpclickhere1]");
+    await page.waitForDelay(60000);
+    page.done();
+  requestSettings: 
+    maxWait: 180000
+  message: clicking on buttons for WA quaternary
 

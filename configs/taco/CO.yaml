@@ -25,4 +25,19 @@ links:
 
 - name: quinary
   url: https://covid19.colorado.gov/data
+  overseerScript: |
+    await page.waitForSelector("a.ckeditor-accordion-toggler");
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'Hospital')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'Case')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1");
+    });
+    page.click("a[ctpclickhere1]");
+    page.done();
+  renderSettings: 
+    viewport:
+      width: 2000
+  message: clicking on case and hospital data summary toggles for CO quinary
 

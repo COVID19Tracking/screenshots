@@ -3,6 +3,7 @@ state: NJ
 links: 
 - name: primary
   url: http://www.state.nj.us/health/healthfacilities/documents/LTC_Facilities_Outbreaks_List.xlsx
+  file: xlsx
   message: downloading xlsx for MS
 
 - name: secondary

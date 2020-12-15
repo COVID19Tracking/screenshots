@@ -1,6 +1,6 @@
 """ Main class for screenshot logic."""
 
-from datetime import datetime
+from datetime import datetime, date, timedelta  # imports needed for evaluating some data URLs
 import json
 import os
 from pytz import timezone
@@ -21,7 +21,7 @@ class Screenshotter():
         
 
     # makes a PhantomJSCloud call to data_url and saves the output to specified path
-    def save_url_image_to_path(self, state, data_url, path, state_config=None):
+    def save_url_image_to_path(self, state, data_url, path, state_config={}):
         """Saves URL image from data_url to the specified path.
 
         Parameters
@@ -38,8 +38,10 @@ class Screenshotter():
         state_config : dict
             If exists, this is a dict used for denoting phantomJScloud special casing or file type
         """
-        if state == 'NY' and 'tertiary' in path:
-            raise ValueError('testing value error')
+
+        # if dynamic, resolve the data_url first
+        if 'eval' in state_config:
+            data_url = eval(data_url)
 
         logger.info(f"Retrieving {data_url}")
 
@@ -64,6 +66,7 @@ class Screenshotter():
             # update data with state_config minus message
             state_config_copy = state_config.copy()
             message = state_config_copy.pop('message', None)
+            state_config_copy.pop('url')  # we don't want to override the URL in case it's dynamic
             if message:
                 logger.info(message)
             data.update(state_config_copy)

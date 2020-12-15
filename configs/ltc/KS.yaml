@@ -3,5 +3,6 @@ state: KS
 links: 
 - name: primary
   url: https://gcc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.coronavirus.kdheks.gov%2FDocumentCenter%2FView%2F1125%2FHistorical---May-5&data=02%7C01%7CMelissa.Dedonder%40ks.gov%7C388977e14b184ed27d1e08d7f1d38198%7Cdcae8101c92d480cbc43c6761ccccc5a%7C0%7C0%7C637243763019442445&sdata=27lX6dNcDcJ%2BP2T996WfPPq4%2BQB0u5iWJnKo6hkwWqg%3D&reserved=0
+  file: pdf
   message: downloading pdf for KS
 

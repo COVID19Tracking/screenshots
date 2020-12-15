@@ -6,5 +6,6 @@ links:
 
 - name: secondary
   url: https://www.michigan.gov/documents/coronavirus/Cases_by_Demographics_Statewide_693129_7.xlsx
+  file: xlsx
   message: downloading xlsx for MI secondary
 

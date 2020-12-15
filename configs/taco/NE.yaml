@@ -5,19 +5,57 @@ links:
   url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
   renderSettings: 
     viewport:
-      height: 5000
-      width: 1400
-  message: using viewport height 5000 for NE
+      width: 2000
+  message: using viewport width 2000 for NE
 
 - name: secondary
   url: https://gis.ne.gov/enterprise/rest/services/Covid19MapV5/MapServer/11/query?where=1%3D1&outFields=%2A&orderByFields=LAB_REPORT_DATE+desc&resultRecordCount=1&f=json
 
 - name: tertiary
   url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//div[text()='Hospitalized Cases']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("div[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  renderSettings: 
+    viewport:
+      width: 2000
+  message: clicking on "Hospitalized Cases".
 
 - name: quaternary
   url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//div[text()='Deaths']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("div[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  renderSettings: 
+    viewport:
+      width: 2000
+  message: clicking on "Deaths".
 
 - name: quinary
   url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//div[text()='Recoveries']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("div[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  renderSettings: 
+    viewport:
+      width: 2000
+  message: clicking on "Recoveries" for NE quinary
 
