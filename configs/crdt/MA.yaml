@@ -2,7 +2,7 @@ state: MA
 
 links: 
 - name: primary
-  url: https://www.mass.gov/doc/covid-19-dashboard-december-14-2020/download
+  url: https://www.mass.gov/doc/covid-19-dashboard-december-15-2020/download
   file: pdf
   message: downloading pdf for MA
 

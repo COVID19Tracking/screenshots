@@ -3,6 +3,13 @@ state: AZ
 links: 
 - name: primary
   url: https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.mouse.click(615, 1100);
+    await page.waitForDelay(20000);
+    page.done();
+  message: clicking on cases for AZ primary
 
 - name: secondary
   url: https://tableau.azdhs.gov/views/Hospitalization/HospitalizedCOVID-19Cases?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Ftableau.azdhs.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=no&:showAppBanner=false&:display_spinner=no&iframeSizedToWindow=true&:loadOrderID=3
@@ -19,7 +26,7 @@ links:
     page.manualWait();
     await page.waitForDelay(10000);
     page.mouse.click(880, 1100);
-    await page.waitForDelay(15000);
+    await page.waitForDelay(20000);
     page.done();
-  message: hovering over and clicking on deaths for AZ quinary
+  message: clicking on deaths for AZ quinary
 

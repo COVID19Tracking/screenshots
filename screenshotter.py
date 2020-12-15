@@ -65,7 +65,8 @@ class Screenshotter():
             # update data with state_config minus message
             state_config_copy = state_config.copy()
             message = state_config_copy.pop('message', None)
-            state_config_copy.pop('url')  # we don't want to override the URL in case it's dynamic
+            for field in ['url', 'name']:  # we don't want to override the URL in case it's dynamic
+                state_config_copy.pop(field)
             if message:
                 logger.info(message)
             data.update(state_config_copy)
