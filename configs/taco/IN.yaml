@@ -5,14 +5,18 @@ links:
   url: https://www.in.gov/isdh/28470.htm
   overseerScript: |
     page.manualWait();
+    await page.waitForDelay(30000);
     await page.waitForSelector("#prefix-dismissButton");
     page.click("#prefix-dismissButton");
     await page.waitForFunction(()=>document.querySelector("#main-content").textContent!=="");
+    await page.waitForDelay(40000);
     page.done();
   renderSettings: 
     viewport:
       height: 13000
       width: 1400
+  requestSettings: 
+    maxWait: 60000
   message: clicking button to get rid of popup, using viewport height 8500 for IN
 
 - name: secondary

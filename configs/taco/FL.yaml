@@ -6,15 +6,8 @@ links:
 
 - name: secondary
   url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/total-antibody-results/serology-reports/serology_latest.pdf
-  overseerScript: |
-    page.manualWait();
-    await page.waitForSelector("body.modal-open");
-    await page.waitForDelay(1000);
-    await page.keyboard.press("Escape");
-    await page.waitForSelector("body:not(.modal-open)");
-    await page.waitForDelay(1000);
-    page.done();
-  message: clear the 'get your flu shot' pop-up from FL's "what you need to know" page
+  file: pdf
+  message: downloading PDF for FL secondary
 
 - name: tertiary
   url: https://bi.ahca.myflorida.com/t/ABICC/views/Public/COVIDHospitalizationsCounty?%3AshowAppBanner=false&%3Adisplay_count=n&%3AshowVizHome=n&%3Aorigin=viz_share_link&%3AisGuestRedirectFromVizportal=y&%3Aembed=y

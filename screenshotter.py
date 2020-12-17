@@ -21,7 +21,7 @@ class Screenshotter():
         
 
     # makes a PhantomJSCloud call to data_url and saves the output to specified path
-    def save_url_image_to_path(self, state, data_url, path, state_config={}):
+    def save_url_image_to_path(self, state, data_url, path, state_config, suffix):
         """Saves URL image from data_url to the specified path.
 
         Parameters
@@ -36,13 +36,17 @@ class Screenshotter():
             Local path to which to save .png screenshot of data_url
 
         state_config : dict
-            If exists, this is a dict used for denoting phantomJScloud special casing or file type
+            This is a dict used for denoting phantomJScloud special casing or file type
+
+        suffix : str
+            e.g. primary, secondary, etc.
         """
 
         # if we need to just download the file, don't use phantomjscloud
         if state_config and state_config.get('file'):
             if self.dry_run:
-                logger.warning(f'Dry run: Downloading file from {data_url}')
+                logger.warning(
+                    f'Dry run: Downloading {state} {suffix} file from {data_url}')
                 return
 
             logger.info(f"Downloading file from {data_url}")
@@ -79,7 +83,9 @@ class Screenshotter():
             data['requestSettings'] = {'maxWait': 60000}
 
         if self.dry_run:
-            logger.warning(f'Dry run: PhantomJsCloud request for {state} from {data_url}: {data}')
+            logger.warning(
+                f'Dry run: PhantomJsCloud request for {state} {suffix} from {data_url}: '
+                f'{json.dumps(data)}')
             return
 
         logger.info('Posting request %s...' % data)
@@ -156,7 +162,8 @@ class Screenshotter():
             err = None
             for i in range(4):
                 try:
-                    self.save_url_image_to_path(state, data_url, local_path, state_config)
+                    self.save_url_image_to_path(
+                        state, data_url, local_path, state_config, suffix)
                     if backup_to_s3:
                         logger.info('Push to s3')
                         self.s3_backup.upload_file(local_path, state)
