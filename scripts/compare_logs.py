@@ -56,8 +56,8 @@ def compare_screenshot_logs(old_log, new_log):
 if __name__ == '__main__':
     print('Core:')
     compare_screenshot_logs(
-        '/Users/julia/old_screenshots_json.log',
-        '/Users/julia/new_screenshots_json.log')
+        '/Users/julia/old_screenshots_core_json.log',
+        '/Users/julia/new_screenshots_core_json.log')
     print('LTC:')
     compare_screenshot_logs(
         '/Users/julia/old_screenshots_ltc_json.log',
