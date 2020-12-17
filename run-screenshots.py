@@ -92,6 +92,8 @@ def main(args_list=None):
     for state in states_from_args(args):
         errors = screenshotter.screenshot(
             state, args.which_screenshot, backup_to_s3=args.push_to_s3)
+        if errors is None:
+            continue
         for suffix, error in errors.items():
             logger.error(f'Error in {state} {suffix}: {error}')
             failed_states.append((state, suffix))

@@ -54,6 +54,10 @@ def output_yamls(team, state_urls, config_basename):
 
     # walk through the states from the spreadsheet
     for state, urls in state_urls.items():
+
+        # no URLs for this state
+        if not any(len(x) > 0 for x in urls.values()):
+            continue
  
         # open a file for the current state, creating the file if it doesn't exist
         with open(destination_directory + "/" + state + '.yaml', 'w+') as outfile:

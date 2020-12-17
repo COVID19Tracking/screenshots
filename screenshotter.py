@@ -126,6 +126,9 @@ class Screenshotter():
     def get_state_config_from_dir(self, state):
         # Return the full parsed state config from file.
         config_path = os.path.join(self.config_dir, '%s.yaml' % state.upper())
+        if not os.path.exists(config_path):
+            return None
+
         with open(config_path) as f:
             config = yaml.safe_load(f)
 
@@ -137,6 +140,10 @@ class Screenshotter():
     def screenshot(self, state, which_screenshot, backup_to_s3=False):
         # extract state config
         full_state_config = self.get_state_config_from_dir(state)
+        if full_state_config is None:
+            logger.info(f'No existing config for {state}')
+            return
+
         errors = {}  # will map screenshot name to error message if any
 
         # do this for all state screenshots
