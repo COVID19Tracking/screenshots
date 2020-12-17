@@ -5,7 +5,7 @@ links:
   url: https://experience.arcgis.com/experience/96dd742462124fa0b38ddedb9b25e429/
 
 - name: secondary
-  url: https://floridahealthcovid19.gov/
+  url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/total-antibody-results/serology-reports/serology_latest.pdf
   overseerScript: |
     page.manualWait();
     await page.waitForSelector("body.modal-open");

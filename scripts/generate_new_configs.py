@@ -101,6 +101,31 @@ def output_yamls(team, state_urls, config_basename):
                             print('Unexpected difference in evaluated link: should be %s but is %s' % (url_text, evaluated_text))
                         url_text = new_url_text
 
+                elif config_basename == 'crdt_screenshot_config.yaml':
+                    eval_needed = False
+                    new_url_text = None
+                    # more special case eval files
+                    if state == 'CT' and url_name == 'primary':
+                        new_url_text = 'date.today().strftime("https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary%m%d%Y.pdf")'
+                        eval_needed = True
+
+                    if state == 'DC' and url_name == 'primary':
+                        new_url_text = '(date.today() - timedelta(days=1)).strftime("https://coronavirus.dc.gov/sites/default/files/dc/sites/coronavirus/page_content/attachments/DC-COVID-19-Data-for-%B-%-d-%Y.xlsx")'
+                        eval_needed = True
+
+                    if state == 'MA' and url_name == 'primary':
+                        new_url_text = 'date.today().strftime("https://www.mass.gov/doc/covid-19-dashboard-%B-%d-%Y/download").lower()'
+                        eval_needed = True
+
+                    if eval_needed:
+                        outfile.write("  eval: True\n")
+                        # make sure the text resolves to what's currently in the sheets
+                        evaluated_text = eval(new_url_text)
+                        if evaluated_text != url_text:
+                            print('Unexpected difference in evaluated link: should be %s but is %s' % (url_text, evaluated_text))
+                        url_text = new_url_text
+
+
                 outfile.write("  url: " + url_text + "\n")
 
                 if existing_state_config:

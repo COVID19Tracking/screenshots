@@ -2,7 +2,8 @@ state: DC
 
 links: 
 - name: primary
-  url: https://coronavirus.dc.gov/sites/default/files/dc/sites/coronavirus/page_content/attachments/DC-COVID-19-Data-for-December-14-2020.xlsx
+  eval: True
+  url: (date.today() - timedelta(days=1)).strftime("https://coronavirus.dc.gov/sites/default/files/dc/sites/coronavirus/page_content/attachments/DC-COVID-19-Data-for-%B-%-d-%Y.xlsx")
   file: xlsx
   message: downloading xlsx for DC
 

@@ -2,7 +2,8 @@ state: CT
 
 links: 
 - name: primary
-  url: https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary12152020.pdf
+  eval: True
+  url: date.today().strftime("https://portal.ct.gov/-/media/Coronavirus/CTDPHCOVID19summary%m%d%Y.pdf")
   file: pdf
   message: downloading pdf for CT
 

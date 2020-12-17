@@ -37,3 +37,6 @@ links:
     page.done();
   message: expand the columns in the data table
 
+- name: quaternary
+  url: https://hub.mph.in.gov/api/3/action/datastore_search_sql?sql=SELECT+sum%28%22COVID_POSITIVE_TESTS_ADMIN%22%29+as+pos_tests+from+%22afaa225d-ac4e-4e80-9190-f6800c366b58%22
+

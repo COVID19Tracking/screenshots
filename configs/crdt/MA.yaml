@@ -2,7 +2,8 @@ state: MA
 
 links: 
 - name: primary
-  url: https://www.mass.gov/doc/covid-19-dashboard-december-15-2020/download
+  eval: True
+  url: date.today().strftime("https://www.mass.gov/doc/covid-19-dashboard-%B-%d-%Y/download").lower()
   file: pdf
   message: downloading pdf for MA
 
