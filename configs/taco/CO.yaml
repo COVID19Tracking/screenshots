@@ -3,6 +3,11 @@ state: CO
 links: 
 - name: primary
   url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Hospital?%3Aembed=y&%3AshowVizHome=no
+  renderSettings:
+    viewport:
+      width: 1400
+      height: 3000
+  message: using viewport width 1400 for CO
 
 - name: secondary
   url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Summary?%3Aembed=y&%3AshowVizHome=no
