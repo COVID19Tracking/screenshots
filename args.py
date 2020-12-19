@@ -51,21 +51,12 @@ group.add_argument('--screenshot-crdt-urls', dest='crdt_urls', action='store_tru
 group.add_argument('--screenshot-ltc-urls', dest='ltc_urls', action='store_true', default=False,
     help='Screenshot LTC data URLs')
 
-# Allows the user to specify primary, secondary, etc. screenshots to take
-# If none of these arguments are present, all screenshots will be taken
-screenshot_type_group = parser.add_argument_group('which_screenshots')
+group.add_argument('--screenshot-vax-urls', dest='vax_urls', action='store_true', default=False,
+    help='Screenshot vaccine data URLs')
 
-screenshot_type_group.add_argument('--primary', dest='primary', action='store_true',
-    default=False, help='Run the primary screenshot')
-screenshot_type_group.add_argument('--secondary', dest='secondary', action='store_true',
-    default=False, help='Run the secondary screenshot')
-screenshot_type_group.add_argument('--tertiary', dest='tertiary', action='store_true',
-    default=False, help='Run the tertiary screenshot')
-screenshot_type_group.add_argument('--quaternary', dest='quaternary', action='store_true',
-    default=False, help='Run the quaternary screenshot')
-screenshot_type_group.add_argument('--quinary', dest='quinary', action='store_true',
-    default=False, help='Run the quinary screenshot')
-screenshot_type_group.add_argument('--which-screenshot', default='',
+# Allows the user to specify a primary, secondary, etc. screenshot to take
+# If this argument is not present, all screenshots will be taken
+parser.add_argument('--which-screenshot', default='',
     help='If present, takes only the corresponding named screenshot from the config')
 
 # Args relating to Slack notifications

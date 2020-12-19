@@ -33,13 +33,15 @@ def states_from_args(args):
 
 def config_dir_from_args(args):
     if args.core_urls:
-        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'taco')
+        subdir = 'taco'
     elif args.crdt_urls:
-        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'crdt')
+        subdir = 'crdt'
     elif args.ltc_urls:
-        config_dir = os.path.join(os.path.dirname(__file__), 'configs', 'ltc')
+        subdir = 'ltc'
+    elif args.vax_urls:
+        subdir = 'vax'
 
-    return config_dir
+    return os.path.join(os.path.dirname(__file__), 'configs', subdir)
 
 
 def slack_notifier_from_args(args):
@@ -51,12 +53,14 @@ def slack_notifier_from_args(args):
 # Return a small string describing which run this is: core, CRDT, LTC.
 def run_type_from_args(args):
     if args.core_urls:
-        run_type = 'core'
+        return 'core'
     elif args.crdt_urls:
-        run_type = 'CRDT'
-    else:
-        run_type = 'LTC'
-    return run_type
+        return 'CRDT'
+    elif args.ltc_urls:
+        return 'LTC'
+    elif args.vax_urls:
+        return 'vaccine'
+    raise ValueError('no run type specified in args: %s' % args)
 
 
 # This is a special-case function: we're screenshotting IHS data separately for now
