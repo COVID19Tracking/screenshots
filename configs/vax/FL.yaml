@@ -1,0 +1,7 @@
+state: FL
+
+links:
+- name: vaccine
+  file: pdf
+  url: http://ww11.doh.state.fl.us/comm/_partners/covid19_report_archive/vaccine/vaccine_report_latest.pdf
+  message: downloading PDF for FL vaccine report
