@@ -6,7 +6,10 @@ links:
 
 - name: secondary
   url: https://drive.google.com/file/d/1FVW6sNbdgyV5-CYkOorYvOGivkmOED8t/view
-
+  file: pdf
+  message: downloading pdf for GU
+  
 - name: tertiary
   url: https://drive.google.com/file/d/1n-vrUGzEzs7rjcxXBFEbIMmeUQykuyO9/view
-
+  file: pdf
+  message: downloading pdf for GU
