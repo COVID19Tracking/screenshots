@@ -22,7 +22,7 @@ links:
     await page.waitForDelay(5000);
     page.click("i[title='Next Page']");
     await page.waitForDelay(15000);
-    page.done();;
+    page.done();
   requestSettings:
     maxWait: 180000
   message: selecting Hospitalizations tab for ND secondary
