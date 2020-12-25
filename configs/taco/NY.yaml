@@ -16,7 +16,7 @@ links:
   message: using viewport width 5000 for NY
 
 - name: tertiary
-  url: https://www.governor.ny.gov/news
+  url: https://www.governor.ny.gov/keywords/coronavirus
   overseerScript: |
     page.manualWait();
     await page.waitForSelector("a[href*=\"/news/governor-cuomo-updates-new-yorkers-states-progress-during-covid-19-pandemic-\"]");
