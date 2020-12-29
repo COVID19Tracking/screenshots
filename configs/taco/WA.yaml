@@ -25,14 +25,14 @@ links:
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(10000);
+    await page.waitForDelay(50000);
     await page.evaluate(() => {
-      document.evaluate("//button/span[contains(text(),'Healthcare')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+      document.evaluate("//button/span[contains(text(),'Healthcare System Readiness')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
     });
     page.click("span[ctpclickhere]");
-    await page.waitForDelay(40000);
+    await page.waitForDelay(50000);
     await page.evaluate(() => {
-      document.evaluate("//button/span[contains(text(),'Percent of all staffed acute care beds')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1");
+      document.evaluate("//button/span[contains(text(),'Percent of staffed acute care beds occupied')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1");
     });
     page.click("span[ctpclickhere1]");
     await page.waitForDelay(60000);
