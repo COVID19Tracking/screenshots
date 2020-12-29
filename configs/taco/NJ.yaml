@@ -17,8 +17,11 @@ links:
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(30000);
+    await page.waitForSelector("button[aria-label='Go to entry 2: Hospital Census']");
+    page.click("button[aria-label='Go to entry 2: Hospital Census']");
+    await page.waitForDelay(20000);
     page.done();
-  message: waiting 30 sec to load NJ secondary
+  message: click on 'Hospital Census' tab for NJ secondary
 
 - name: tertiary
   url: https://njhealth.maps.arcgis.com/apps/opsdashboard/index.html#/81a17865cb1a44db92eb8eb421703635
