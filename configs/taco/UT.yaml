@@ -17,3 +17,16 @@ links:
       width: 1400
   message: UT dashboard doesn't render in phantomjscloud unless we set a viewport
 
+- name: tertiary
+  url: https://coronavirus-dashboard.utah.gov/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.mouse.move(2490, 3025);
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings:
+    viewport:
+      height: 6000
+      width: 3000
+  message: hover over recovered cases
