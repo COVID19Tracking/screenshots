@@ -1,0 +1,5 @@
+state: WI
+
+links:
+- name: vaccine
+  url: https://www.dhs.wisconsin.gov/covid-19/vaccine-data.htm
