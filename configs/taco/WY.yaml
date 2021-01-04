@@ -10,7 +10,7 @@ links:
     page.manualWait();
     await page.waitForDelay(10000);
     page.mouse.move(630, 890);
-    await page.waitForDelay(10000);
+    await page.waitForDelay(20000);
     page.done();
   message: hover over lab confirmed cases for WY secondary to get timestamp
 
@@ -23,7 +23,7 @@ links:
     page.manualWait();
     await page.waitForDelay(10000);
     page.mouse.move(1174, 479);
-    await page.waitForDelay(10000);
+    await page.waitForDelay(20000);
     page.done();
   message: hover over hospitalizations for WY quaternary
 
