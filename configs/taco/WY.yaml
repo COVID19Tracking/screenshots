@@ -6,13 +6,24 @@ links:
 
 - name: secondary
   url: https://health.wyo.gov/publichealth/infectious-disease-epidemiology-unit/disease/novel-coronavirus/covid-19-map-and-statistics/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.mouse.move(630, 890);
+    await page.waitForDelay(20000);
+    page.done();
+  message: hover over lab confirmed cases for WY secondary to get timestamp
 
 - name: tertiary
   url: https://health.wyo.gov/publichealth/infectious-disease-epidemiology-unit/disease/novel-coronavirus/covid-19-testing-data/
 
 - name: quaternary
   url: https://sites.google.com/wyo.gov/exec-covid19/hospital-resources
-
-- name: quinary
-  url: https://public.tableau.com/views/StateandCountyDashboard/Dashboard1?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:language=en&publish=yes&:loadOrderID=0
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.mouse.move(1174, 479);
+    await page.waitForDelay(20000);
+    page.done();
+  message: hover over hospitalizations for WY quaternary
 
