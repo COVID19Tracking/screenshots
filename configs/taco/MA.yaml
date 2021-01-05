@@ -12,6 +12,17 @@ links:
   message: waiting a minute to load MA
 
 - name: secondary
+  url: https://www.mass.gov/info-details/covid-19-response-reporting
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tabZoneId854");
+    page.click("#tabZoneId854");
+    await page.waitForDelay(30000);
+    page.done();
+  message: clicking on COVID-19 Testing tab of dash for MA secondary
+
+- name: tertiary
   eval: True
   url: date.today().strftime("https://www.mass.gov/doc/weekly-covid-19-public-health-report-%B-%d-%Y/download").lower()
   file: pdf
