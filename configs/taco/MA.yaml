@@ -2,14 +2,17 @@ state: MA
 
 links: 
 - name: primary
-  eval: True
-  url: date.today().strftime("https://www.mass.gov/doc/covid-19-dashboard-%B-%d-%Y/download").lower()
-  file: pdf
-  message: downloading pdf for MA
+  url: https://www.mass.gov/info-details/covid-19-cases-quarantine-and-monitoring
+  overseerScript: 
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+  requestSettings:
+    maxWait: 90000
+  message: waiting a minute to load MA
 
 - name: secondary
   eval: True
   url: date.today().strftime("https://www.mass.gov/doc/weekly-covid-19-public-health-report-%B-%d-%Y/download").lower()
   file: pdf
   message: downloading pdf for MA secondary
-
