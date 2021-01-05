@@ -47,3 +47,16 @@ links:
     maxWait: 120000
   message: clicking on 'deaths' box
 
+- name: quinary
+  url: https://dhhr.wv.gov/Coronavirus%20Disease-COVID-19/Pages/default.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'Other Trends')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(40000);
+    page.done();
+  message: clicking on other trends tab of dashboard for recoveries
+
