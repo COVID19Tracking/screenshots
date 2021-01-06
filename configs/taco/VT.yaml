@@ -3,6 +3,11 @@ state: VT
 links: 
 - name: primary
   url: https://experience.arcgis.com/experience/85f43bd849e743cb957993a545d17170
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  message: waiting for delay for VT primary
 
 - name: secondary
   url: https://www.healthvermont.gov/response/coronavirus-covid-19/current-activity-vermont#dashboard
