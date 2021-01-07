@@ -6,30 +6,37 @@ links:
 
 - name: secondary
   url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSection713122d051caa3096e41
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => { document.evaluate("//span[contains(text(),'Deaths')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere"); });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  message: deaths for NV secondary
 
 - name: tertiary
   url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSection966ce53550e53608e0a6
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
-    page.mouse.move(1436, 591);
-    await page.waitForDelay(8000);
+    await page.waitForDelay(20000);
+    await page.evaluate(() => { document.evaluate("//span[contains(text(),'Trends')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere"); });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(20000);
+    await page.evaluate(() => { document.evaluate("//span[contains(text(),'Testing')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere1", "ctpclickhere1"); });
+    page.click("span[ctpclickhere1]");
+    await page.waitForDelay(20000);
     page.done();
-  renderSettings:
-    viewport:
-      width: 2000
-  message: hospitalizations for NV tertiary
+  message: testing for NV tertiary
 
 - name: quaternary
   url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSection966ce53550e53608e0a6
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
-    page.mouse.move(1440, 890);
-    await page.waitForDelay(10000);
+    await page.waitForDelay(20000);
+    await page.evaluate(() => { document.evaluate("//span[contains(text(),'Hospitalizations')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere"); });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(20000);
     page.done();
-  renderSettings:
-    viewport:
-      width: 2000
-  message: ICU and ventilator usage for NV quaternary
+  message: cur hosp, ICU and ventilator usage for NV quaternary
 
