@@ -2,7 +2,7 @@ state: AS
 
 links: 
 - name: primary
-  url: https://www.americansamoa.gov/covid-19-advisories
+  url: https://www.americansamoa.gov
 
 - name: secondary
   url: https://www.facebook.com/amsamgov/
