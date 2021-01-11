@@ -9,11 +9,14 @@ links:
 
 - name: tertiary
   url: https://microstrategy.dc.gov/MicroStrategyLibrary/app/E52A533B11EA01A28FE80080EFC53DA4/30FE682111EA6FB5A6620080EF357B1F/WEF49494DFBDE44548AFB2A631C5233CC--K46
+  renderSettings:
+    viewport:
+      width: 2400
   overseerScript: |
     page.manualWait();
     await page.waitForSelector("div.mstrd-DossierViewOnboarding-skipBtn");
     page.click("div.mstrd-DossierViewOnboarding-skipBtn");
     await page.waitForDelay(5000);
     page.done();
-  message: clicking skip to get rid of popup for DC, waiting 5 sec
+  message: wide view to see all data, clicking skip to get rid of popup for DC, waiting 5 sec
 
