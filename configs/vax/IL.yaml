@@ -1,0 +1,6 @@
+state: IL
+
+links:
+- name: chicago-vaccine
+  url: https://data.cityofchicago.org/resource/553k-3xzc.csv
+  file: csv
