@@ -1,0 +1,5 @@
+state: UT
+
+links:
+- name: vaccine
+  url: https://coronavirus-dashboard.utah.gov/#vaccines

@@ -1,0 +1,5 @@
+state: AR
+
+links:
+- name: vaccine
+  url: https://www.healthy.arkansas.gov/programs-services/topics/covid-19-vaccination-plan

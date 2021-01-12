@@ -1,0 +1,11 @@
+state: MN
+
+links:
+- name: vaccineproviders
+  url: https://www.health.state.mn.us/diseases/coronavirus/vaccine/stats/provider.html
+
+- name: vaccinedistribution
+  url: https://www.health.state.mn.us/diseases/coronavirus/vaccine/stats/distrib.html
+
+- name: vaccineadmin
+  url: https://health.state.mn.us/diseases/coronavirus/vaccine/stats/admin.html#agend1

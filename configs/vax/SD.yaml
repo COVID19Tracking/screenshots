@@ -1,0 +1,5 @@
+state: SD
+
+links:
+- name: vaccineproviders
+  url: https://doh.sd.gov/COVID/Vaccine/VaccineProviders.aspx

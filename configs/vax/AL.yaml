@@ -1,0 +1,5 @@
+state: AL
+
+links:
+- name: vaccine
+  url: https://alpublichealth.maps.arcgis.com/apps/MapSeries/index.html?appid=d84846411471404c83313bfe7ab2a367

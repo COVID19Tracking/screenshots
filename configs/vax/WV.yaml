@@ -1,0 +1,5 @@
+state: WV
+
+links:
+- name: vaccine
+  url: https://dhhr.wv.gov/COVID-19/Pages/default.aspx

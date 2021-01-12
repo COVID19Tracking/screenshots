@@ -1,0 +1,5 @@
+state: AK
+
+links:
+- name: vaccine
+  url: https://www.arcgis.com/apps/opsdashboard/index.html#/84691dc5b0184827af0fd8e4c20034d9

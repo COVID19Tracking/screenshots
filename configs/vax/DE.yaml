@@ -1,0 +1,5 @@
+state: DE
+
+links:
+- name: vaccine
+  url: https://myhealthycommunity.dhss.delaware.gov/locations/state/vaccine-tracker#vaccine_tracker

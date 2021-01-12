@@ -1,0 +1,5 @@
+state: NE
+
+links:
+- name: vaccine
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_1/

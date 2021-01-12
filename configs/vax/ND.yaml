@@ -1,0 +1,5 @@
+state: ND
+
+links:
+- name: vaccine
+  url: https://www.health.nd.gov/covid19vaccine/dashboard

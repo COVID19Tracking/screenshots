@@ -1,0 +1,5 @@
+state: ME
+
+links:
+- name: vaccine
+  url: https://www.maine.gov/covid19/vaccines

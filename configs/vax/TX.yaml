@@ -1,0 +1,30 @@
+state: TX
+
+links:
+- name: vaccineproviders
+  url: https://tdem.maps.arcgis.com/apps/webappviewer/index.html?id=3700a84845c5470cb0dc3ddace5c376b
+
+- name: vaccinetab1
+  url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/Summary?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+
+- name: vaccinetab2
+  url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/VaccineDosesAllocated?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+
+- name: vaccinetab3
+  url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/VaccineDosesAdministered?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+
+- name: vaccinetab4
+  url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/PeopleVaccinated?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+
+- name: vaccinetab5
+  url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/AbouttheData?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+
+- name: vaccineraw
+  url: https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+  file: xls
+  message: downloading raw data
+
+- name: vaccineprovidersraw
+  url: https://genesis.soc.texas.gov/files/accessibility/vaccineprovideraccessibilitydata.csv
+  file: csv
+  message: downloading raw provider data

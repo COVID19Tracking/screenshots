@@ -1,0 +1,5 @@
+state: NC
+
+links:
+- name: vaccine
+  url: https://covid19.ncdhhs.gov/dashboard/vaccinations
