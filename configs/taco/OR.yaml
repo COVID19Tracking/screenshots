@@ -27,3 +27,6 @@ links:
 - name: quaternary
   url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19Update/HospitalCapacity
 
+- name: senary
+  url: https://www.oregon.gov/oha/covid19/Documents/DataReports/Weekly-Data-COVID-19-Report.pdf
+  file: pdf
