@@ -1,0 +1,5 @@
+state: RI
+
+links:
+- name: vaccine
+  url: https://ri-department-of-health-covid-19-data-rihealth.hub.arcgis.com/

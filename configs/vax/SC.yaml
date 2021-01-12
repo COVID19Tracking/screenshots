@@ -1,0 +1,5 @@
+state: SC
+
+links:
+- name: vaccine
+  url: https://scdhec.gov/covid19/covid-19-vaccine-allocation

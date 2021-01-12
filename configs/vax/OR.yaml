@@ -1,0 +1,5 @@
+state: OR
+
+links:
+- name: vaccine
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19#!/vizhome/OregonCOVID-19VaccinationTrends/OregonStatewideVaccinationTrends

@@ -1,0 +1,5 @@
+state: VI
+
+links:
+- name: newspage
+  url: https://www.covid19usvi.com/news

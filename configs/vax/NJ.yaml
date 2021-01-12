@@ -1,0 +1,14 @@
+state: NJ
+
+links:
+- name: vaccine
+  url: https://njhealth.maps.arcgis.com/apps/MapSeries/index.html?appid=50c2c6af93364b4da9c0bf6327c04b45&folderid=e5d6362c0f1f4f9684dc650f00741b24
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    await page.waitForSelector("button[aria-label='Go to entry 2: Vaccination Overview']");
+    page.click("button[aria-label='Go to entry 2: Vaccination Overview']");
+    await page.waitForDelay(20000);
+    page.done();
+  message: click on 'Vaccination Overview' tab for NJ
+

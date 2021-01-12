@@ -3,3 +3,8 @@ state: US
 links:
 - name: vaccine
   url: https://covid.cdc.gov/covid-data-tracker/#vaccinations
+
+- name: cvs
+  url: https://cvshealth.com/sites/default/files/cvs-health-covid-19-vaccination-data.pdf
+  file: pdf
+  message: downloading pdf

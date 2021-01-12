@@ -1,0 +1,5 @@
+state: VT
+
+links:
+- name: vaccine
+  url: https://www.healthvermont.gov/covid-19/vaccine/covid-19-vaccine-dashboard

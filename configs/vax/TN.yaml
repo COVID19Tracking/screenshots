@@ -1,8 +1,5 @@
 state: TN
 
-links: 
+links:
 - name: vaccine
-  url: https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/Vaccine.pdf
-  file: pdf
-  message: downloading pdf for TN
-
+  url: https://www.tn.gov/health/cedep/ncov/covid-19-vaccine-information.html

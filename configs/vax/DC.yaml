@@ -1,0 +1,5 @@
+state: DC
+
+links:
+- name: vaccine
+  url: https://coronavirus.dc.gov/data/vaccination

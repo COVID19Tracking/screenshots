@@ -1,0 +1,5 @@
+state: LA
+
+links:
+- name: vaccine
+  url: https://experience.arcgis.com/experience/594402dcbe3747cb81d81cfc2e0e1343/page/page_0/?views=view_8

@@ -1,0 +1,5 @@
+state: KY
+
+links:
+- name: vaccine
+  url: https://govstatus.egov.com/ky-covid-vaccine

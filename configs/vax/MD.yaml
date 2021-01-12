@@ -1,0 +1,5 @@
+state: MD
+
+links:
+- name: vaccine
+  url: https://coronavirus.maryland.gov/#Vaccine

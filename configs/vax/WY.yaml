@@ -1,0 +1,5 @@
+state: WY
+
+links:
+- name: vaccine
+  url: https://health.wyo.gov/publichealth/immunization/wyoming-covid-19-vaccine-information/ 

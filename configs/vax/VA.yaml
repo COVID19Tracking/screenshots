@@ -1,0 +1,5 @@
+state: VA
+
+links:
+- name: vaccine
+  url: https://www.vdh.virginia.gov/coronavirus/covid-19-vaccine-summary/
