@@ -5,9 +5,7 @@ links:
   url: https://www.dhhs.nh.gov/dphs/cdcs/2019-ncov.htm
 
 - name: secondary
-  url: https://www.nh.gov/covid19/documents/case-summary.pdf
-  file: pdf
-  message: downloading pdf
+  url: https://www.nh.gov/covid19/dashboard/case-summary.htm
 
 - name: tertiary
   url: https://www.nh.gov/covid19/dashboard/overview.htm#dash
