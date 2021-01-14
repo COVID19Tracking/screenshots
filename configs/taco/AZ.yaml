@@ -38,7 +38,7 @@ links:
     page.done();
   message: clicking on deaths for AZ quinary
 
-- name: current-icu
+- name: current_icu
   url: https://tableau.azdhs.gov/views/ExternalEMResourceCOVIDSpecificDashboard/ICUBedsforCOVID-19?%3Aembed=y&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Ftableau.azdhs.gov%2F&%3Aembed_code_version=3&%3Atabs=yes&%3Atoolbar=no&%3AshowAppBanner=false&%3Adisplay_spinner=no&iframeSizedToWindow=true&%3AloadOrderID=1
   renderSettings:
     viewport:
