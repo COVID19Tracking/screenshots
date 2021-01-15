@@ -34,3 +34,17 @@ links:
     page.click("#ember827");
     page.done();
   message: click button for PR confirmed deaths ("Confirmados")
+
+- name: deaths_probable
+  url: https://bioseguridad.maps.arcgis.com/apps/opsdashboard/index.html#/3bfb64c9a91944bc8c41edd8ff27e6df
+  overseerScript: |
+    await page.waitForNavigation({
+     waitUntil:"domcontentloaded"});
+    await page.waitForSelector("#ember827");
+    page.click("#ember827");
+    page.manualWait();
+    await page.waitForDelay(5000);
+    page.click("#ember827");
+    await page.waitForDelay(5000);
+    page.done();
+  message: click button twice for PR probable deaths ("Probables")
