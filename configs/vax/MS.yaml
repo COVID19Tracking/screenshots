@@ -3,3 +3,4 @@ state: MS
 links:
 - name: vaccine
   url: https://msdh.ms.gov/msdhsite/_static/resources/12130.pdf
+  file: pdf
