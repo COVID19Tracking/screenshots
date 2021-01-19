@@ -6,18 +6,33 @@ links:
 
 - name: vaccinetab1
   url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/Summary?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+  renderSettings:
+    viewport:
+      width: 1800
 
 - name: vaccinetab2
   url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/VaccineDosesAllocated?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+  renderSettings:
+    viewport:
+      width: 1800
 
 - name: vaccinetab3
   url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/VaccineDosesAdministered?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+  renderSettings:
+    viewport:
+      width: 1800
 
 - name: vaccinetab4
   url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/PeopleVaccinated?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+  renderSettings:
+    viewport:
+      width: 1800
 
 - name: vaccinetab5
   url: https://tabexternal.dshs.texas.gov/t/THD/views/COVID-19VaccineinTexasDashboard/AbouttheData?%3Aorigin=card_share_link&%3Aembed=y&%3AisGuestRedirectFromVizportal=y&%3AdeepLinkingDisabled=y
+  renderSettings:
+    viewport:
+      width: 1800
 
 - name: vaccineraw
   url: https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
