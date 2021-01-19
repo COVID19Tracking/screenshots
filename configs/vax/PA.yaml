@@ -3,6 +3,9 @@ state: PA
 links:
 - name: vaccine
   url: https://www.health.pa.gov/topics/disease/coronavirus/Pages/Vaccine.aspx
+  renderSettings:
+    viewport:
+      height: 8000
 
 - name: vaccinephl
   url: https://www.phila.gov/programs/coronavirus-disease-2019-covid-19/vaccines/data/
