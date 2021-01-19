@@ -3,3 +3,7 @@ state: ND
 links:
 - name: vaccine
   url: https://www.health.nd.gov/covid19vaccine/dashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(45000);
+    page.done();
