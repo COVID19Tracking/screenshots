@@ -15,15 +15,23 @@ links:
   url: https://www.mass.gov/info-details/covid-19-response-reporting
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(6000);
-    await page.waitForSelector("#tabZoneId854");
-    page.click("#tabZoneId854");
+    await page.waitForDelay(45000);
+    await page.waitForSelector("div[title=\"Navigate to 'COVID-19 Testing'\"]");
+    page.click("div[title=\"Navigate to 'COVID-19 Testing'\"]");
     await page.waitForDelay(30000);
     page.done();
+  requestSettings:
+    maxWait: 90000  
   message: clicking on COVID-19 Testing tab of dash for MA secondary
 
 - name: tertiary
   eval: True
   url: date.today().strftime("https://www.mass.gov/doc/weekly-covid-19-public-health-report-%B-%d-%Y/download").lower()
   file: pdf
-  message: downloading pdf for MA secondary
+  message: downloading pdf for MA weekly health report
+  
+- name: quaternary
+  eval: True
+  url: date.today().strftime("https://www.mass.gov/doc/covid-19-raw-data-%B-%d-%Y/download").lower()
+  file: xlsx
+  message: downloading xlsx for MA daily raw data
