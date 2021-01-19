@@ -3,3 +3,7 @@ state: WV
 links:
 - name: vaccine
   url: https://dhhr.wv.gov/COVID-19/Pages/default.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();

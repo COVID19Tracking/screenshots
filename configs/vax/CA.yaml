@@ -3,3 +3,7 @@ state: CA
 links:
 - name: vaccine
   url: https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/COVID-19/VaccineDoses.aspx
+  renderSettings: 
+    viewport:
+      height: 10000
+      width: 2000

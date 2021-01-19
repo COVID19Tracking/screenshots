@@ -3,3 +3,6 @@ state: ID
 links:
 - name: vaccine
   url: https://coronavirus.idaho.gov/
+  renderSettings: 
+    viewport:
+      height: 2500
