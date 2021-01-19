@@ -3,4 +3,6 @@ state: CO
 links:
 - name: vaccine
   url: https://covid19.colorado.gov/vaccine
-
+  renderSettings: 
+    viewport:
+      width: 2000
