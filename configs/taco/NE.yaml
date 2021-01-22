@@ -2,7 +2,7 @@ state: NE
 
 links: 
 - name: primary
-  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_0/
   renderSettings: 
     viewport:
       width: 2000
@@ -12,7 +12,7 @@ links:
   url: https://gis.ne.gov/enterprise/rest/services/Covid19MapV5/MapServer/11/query?where=1%3D1&outFields=%2A&orderByFields=LAB_REPORT_DATE+desc&resultRecordCount=1&f=json
 
 - name: tertiary
-  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_0/
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(20000);
@@ -28,7 +28,7 @@ links:
   message: clicking on "Hospitalized Cases".
 
 - name: quaternary
-  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_0/
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(20000);
@@ -44,7 +44,7 @@ links:
   message: clicking on "Deaths".
 
 - name: quinary
-  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_0/
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(20000);
@@ -54,8 +54,23 @@ links:
     page.click("div[ctpclickhere]");
     await page.waitForDelay(20000);
     page.done();
-  renderSettings: 
+  renderSettings:
     viewport:
       width: 2000
-  message: clicking on "Recoveries" for NE quinary
+  message: clicking on "Recoveries"
 
+- name: data-timestamp
+  url: https://experience.arcgis.com/experience/ece0db09da4d4ca68252c3967aa1e9dd/page/page_0/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//div[text()='Last 14 Day Positive Cases']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("div[ctpclickhere]");
+    await page.waitForDelay(20000);
+    page.done();
+  renderSettings:
+    viewport:
+      width: 2000
+  message: clicking on "Last 14 Day Positive Cases" for timestamp
