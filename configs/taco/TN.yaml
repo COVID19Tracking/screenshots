@@ -37,7 +37,7 @@ links:
     await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(2) input");
     page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(2) input");
     await page.waitForDelay(5000);
-    page.mouse.move(1087, 542);
+    page.mouse.move(1094, 542);
     await page.waitForDelay(15000);
     page.done();
   message: pending hospitalizations for TN quinary
