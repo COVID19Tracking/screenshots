@@ -3,12 +3,27 @@ state: MO
 links: 
 - name: primary
   url: https://showmestrong.mo.gov/data/statewide-public-health/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  message: waiting for MO primary
 
 - name: secondary
   url: https://showmestrong.mo.gov/public-healthcare-testing/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  message: waiting for MO secondary
 
 - name: tertiary
   url: https://showmestrong.mo.gov/public-healthcare/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  message: waiting for MO tertiary
 
 - name: quaternary
   url: https://showmestrong.mo.gov/public-healthcare-testing/
