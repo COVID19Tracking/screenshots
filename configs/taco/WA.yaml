@@ -7,11 +7,14 @@ links:
     page.manualWait();
     await page.waitForSelector("[href='#pnlHospAndIcuTbl']");
     page.click("[href='#pnlHospAndIcuTbl']");
-    await page.waitForDelay(120000);
+    await page.waitForDelay(180000);
     page.done();
   requestSettings: 
-    maxWait: 120000
-  message: clicking on Ventilator data and waiting 120 sec to load WA
+    maxWait: 180000
+  renderSettings:
+    viewport:
+      width: 3000
+  message: clicking on Ventilator data and waiting 180 sec to load WA
 
 - name: secondary
   url: https://coronavirus.wa.gov/what-you-need-know/covid-19-risk-assessment-dashboard
