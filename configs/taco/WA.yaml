@@ -9,7 +9,7 @@ links:
     page.click("[href='#pnlHospAndIcuTbl']");
     await page.waitForDelay(180000);
     page.done();
-  requestSettings: 
+  requestSettings:
     maxWait: 180000
   renderSettings:
     viewport:
@@ -30,11 +30,13 @@ links:
     page.manualWait();
     await page.waitForDelay(20000);
     await page.evaluate(() => {
-      document.evaluate("//button/span[contains(text(),'Percent of adult ICU staffed beds')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+      document.evaluate("//button/span[contains(text(),'ICU staffed beds occupied by COVID-19 cases')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
     });
     page.click("span[ctpclickhere]");
-    await page.waitForDelay(30000);
+    await page.waitForDelay(60000);
     page.done();
+  requestSettings:
+    maxWait: 120000
   message: cur icu WA tertiary
 
 - name: quaternary
@@ -46,7 +48,9 @@ links:
       document.evaluate("//button/span[contains(text(),'Beds occupied by COVID patients')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
     });
     page.click("span[ctpclickhere]");
-    await page.waitForDelay(30000);
+    await page.waitForDelay(60000);
     page.done();
+  requestSettings:
+    maxWait: 120000
   message: cur hosp for WA quaternary
 
