@@ -10,7 +10,7 @@ links:
     await page.waitForDelay(180000);
     page.done();
   requestSettings:
-    maxWait: 180000
+    maxWait: 200000
   renderSettings:
     viewport:
       width: 3000
