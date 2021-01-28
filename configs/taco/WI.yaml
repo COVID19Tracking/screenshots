@@ -60,4 +60,15 @@ links:
     page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(3) input");
     await page.waitForDelay(5000);
     page.done();
-  message: wi probables
+  message: WI confirmed and probable cases
+
+- name: deaths_confirmed_probable
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofCOVID-19deathsby-group-MOBILE/DeathDB2?:embed_code_version=3&:embed=y&:loadOrderID=2&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: WI confirmed and probable deaths
