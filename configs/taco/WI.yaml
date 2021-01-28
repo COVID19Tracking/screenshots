@@ -40,7 +40,7 @@ links:
     page.done();
   message: WI probable deaths for quinary
 
-- name: icu-cumulative
+- name: icu_cumulative
   url: https://bi.wisconsin.gov/t/DHS/views/caseswithinagegrouptableandbar_15934419036680/Dashboard2?:embed_code_version=3&:embed=y&:loadOrderID=5&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
   overseerScript: |
     page.manualWait();
@@ -51,3 +51,13 @@ links:
     page.done();
   message: WI cumulative icu
 
+- name: cases_confirmed_probable
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofconfirmedprobableCOVID-19casesby-group-MOBILE/CaseDB2/butleoljdl@accounts.wistate.us/ed25311e-7f8a-4c7d-aee8-97b28850f0ac?:embed=y&:display_spinner=no&:showAppBanner=false&:embed_code_version=3&:loadOrderID=4&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: wi probables
