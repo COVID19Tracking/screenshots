@@ -1,0 +1,17 @@
+state: WA
+
+links: 
+- name: primary
+  url: https://www.doh.wa.gov/Emergencies/COVID19/DataDashboard
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[href='#pnlVaccinationsTbl']");
+    page.click("[href='#pnlVaccinationsTbl']");
+    await page.waitForDelay(180000);
+    page.done();
+  requestSettings:
+    maxWait: 200000
+  renderSettings:
+    viewport:
+      width: 3000
+  message: clicking on Vaccination data and waiting 180 sec to load WA
