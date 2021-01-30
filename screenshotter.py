@@ -176,7 +176,7 @@ class Screenshotter():
                         self.s3_backup.upload_file(local_path, state)
                     err = None
                     break
-                except ValueError as e:
+                except Exception as e:
                     logger.error(f'Screenshot {state} {suffix} failed attempt %d' % (i+1))
                     err = e
 
