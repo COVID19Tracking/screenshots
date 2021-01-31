@@ -50,7 +50,15 @@ class Screenshotter():
                 return
 
             logger.info(f"Downloading file from {data_url}")
-            response = requests.get(data_url)
+
+            # hack: the KY secondary link has a cert problem which fails SSL verification, this
+            # lets us still download it
+            if state == 'KY' and suffix == 'secondary':
+                logger.info(f"Skipping SSL verification for KY secondary")
+                response = requests.get(data_url, verify=False)
+            else:
+                response = requests.get(data_url)
+
             if response.status_code == 200:
                 with open(path, 'wb') as f:
                     f.write(response.content)
