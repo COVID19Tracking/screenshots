@@ -1,0 +1,10 @@
+state: IA
+
+links:
+- name: vaccine
+  url: https://coronavirus.iowa.gov/pages/vaccineinformation
+  overseerScript: |
+     page.manualWait();
+     await page.waitForDelay(60000);
+     page.done();
+   message: waiting 60 sec to load IA vaccine
