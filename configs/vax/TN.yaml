@@ -3,3 +3,8 @@ state: TN
 links:
 - name: vaccine
   url: https://www.tn.gov/health/cedep/ncov/covid-19-vaccine-information.html
+
+- name: vaccine_secondary
+  url: https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/COVID_VACCINE_DEMOGRAPHICS.XLSX
+  file: xlsx
+  message: downloading TN vaccine demographics sheet
