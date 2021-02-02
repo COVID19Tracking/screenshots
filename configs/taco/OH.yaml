@@ -6,11 +6,3 @@ links:
 
 - name: secondary
   url: https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards/key-metrics/cases
-
-- name: tertiary
-  url: https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards/key-metrics/hospitalizations
-  renderSettings: 
-    viewport:
-      width: 1600
-  message: forcing wider viewPort to avoid clipping
-
