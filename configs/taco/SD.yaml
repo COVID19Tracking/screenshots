@@ -12,13 +12,12 @@ links:
 - name: secondary
   url: https://doh.sd.gov/COVID/Dashboard.aspx
   overseerScript: |
-    await page.waitForDelay(10000);
+    await page.waitForDelay(25000);
     await page.waitForSelector("i[title='Next Page']");
-    page.click("i[title='Next Page']");
-    await page.waitForDelay(5000);
-    page.click("i[title='Next Page']");
-    await page.waitForDelay(5000);
-    page.click("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Hospital Capacity')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
     await page.waitForDelay(25000);
     page.done();
   requestSettings:
