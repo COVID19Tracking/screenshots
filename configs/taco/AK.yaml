@@ -2,12 +2,12 @@ state: AK
 
 links: 
 - name: primary
-  url: http://dhss.alaska.gov/dph/Epi/id/Pages/COVID-19/monitoring.aspx
+  url: https://alaska-coronavirus-vaccine-outreach-alaska-dhss.hub.arcgis.com/app/6a5932d709ef4ab1b868188a4c757b4f
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
-    page.done();
-  message: waiting 30 sec to load AK primary
+    await page.waitForDelay(50000);
+    page.done()
+  message: waiting 50 seconds to load AK primary
 
 - name: secondary
   url: https://experience.arcgis.com/experience/ed1c874ca60b4c15ab09095a070065ca
