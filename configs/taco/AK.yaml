@@ -2,22 +2,19 @@ state: AK
 
 links: 
 - name: primary
-  url: http://dhss.alaska.gov/dph/Epi/id/Pages/COVID-19/monitoring.aspx
+  url: https://alaska-coronavirus-vaccine-outreach-alaska-dhss.hub.arcgis.com/app/6a5932d709ef4ab1b868188a4c757b4f
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
-    page.done();
-  message: waiting 30 sec to load AK primary
+    await page.waitForDelay(50000);
+    page.done()
+  message: waiting 50 seconds to load AK primary
 
 - name: secondary
   url: https://experience.arcgis.com/experience/ed1c874ca60b4c15ab09095a070065ca
 
 - name: tertiary
-  url: https://alaska-dhss.maps.arcgis.com/apps/opsdashboard/index.html#/8782a14ef52342e99f866a3b8a3e624a
-
-- name: quaternary
   url: https://services1.arcgis.com/WzFsmainVTuD5KML/arcgis/rest/services/Tests_Dataset/FeatureServer/0/query?where=Test_Result+%3D+%27Negative%27&outStatistics=%5B%7B%27statisticType%27%3A+%27count%27%2C+%27onStatisticField%27%3A+%27FID%27%2C+%27outStatisticFieldName%27%3A+%27tests_negative%27%7D%5D
 
-- name: quinary
+- name: quaternary
   url: https://services1.arcgis.com/WzFsmainVTuD5KML/arcgis/rest/services/Tests_Dataset/FeatureServer/0/query?where=Test_Result+%3D+%27Positive%27&outStatistics=%5B%7B%27statisticType%27%3A+%27count%27%2C+%27onStatisticField%27%3A+%27FID%27%2C+%27outStatisticFieldName%27%3A+%27tests_positive%27%7D%5D
 
