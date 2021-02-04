@@ -41,3 +41,6 @@ links:
       width: 2000
   message: clicking on Cases and Deaths Tab for VT tertiary
 
+- name: quaternary
+  url: https://www.healthvermont.gov/sites/default/files/documents/pdf/Covid-19-Daily-Update.pdf
+  file: pdf
