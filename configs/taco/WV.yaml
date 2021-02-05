@@ -62,7 +62,7 @@ links:
     maxWait: 120000
   message: clicking on other trends tab of dashboard for recoveries
 
-- name: antibody-tests
+- name: antibody_tests
   url: https://dhhr.wv.gov/Coronavirus%20Disease-COVID-19/Pages/default.aspx
   overseerScript: |
     page.manualWait();
@@ -77,3 +77,17 @@ links:
     maxWait: 120000
   message: clicking on case and lab trends tab of dashboard for antibody test numbers
 
+- name: cases_confirmed_probable
+  url: https://dhhr.wv.gov/Coronavirus%20Disease-COVID-19/Pages/default.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//button/span[contains(text(),'Cumulative Summary')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(60000);
+    page.done();
+  requestSettings:
+    maxWait: 120000
+  message: clicking on cumulative summary tab of dashboard for confirmed and probable cases
