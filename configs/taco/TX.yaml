@@ -1,6 +1,6 @@
 state: TX
 
-links: 
+links:
 - name: primary
   url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83
   overseerScript: |
@@ -28,13 +28,25 @@ links:
     page.click("div[ctpclickhere]");
     await page.waitForDelay(20000);
     page.done();
-  renderSettings: 
+  renderSettings:
     viewport:
       width: 2000
   message: clicking on "Hospitals - Statewide" tab. Also widening viewport so that tab is visible.
-  
+
 - name: quinary
   url: https://services5.arcgis.com/ACaLB9ifngzawspq/ArcGIS/rest/services/TX_DSHS_COVID19_TestData_Service/FeatureServer/4/query?where=1%3D1&outFields=%2A&orderByFields=Date+desc&resultRecordCount=1
 
-
-
+- name: probable-cases
+  url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(15000);
+    await page.evaluate(() => {
+      document.evaluate("//div[contains(text(),'Probable Cases')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).getElementsByTagName("input")[1];
+    });
+    await page.waitForDelay(5000);
+    page.done();
+  renderSettings:
+    viewport:
+      width: 2000
+  message: clicking on "Probable Cases" tab. Also widening viewport so that tab is visible.
