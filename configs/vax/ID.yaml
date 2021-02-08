@@ -9,7 +9,7 @@ links:
       
 - name: vaccine_secondary
   url: https://public.tableau.com/profile/idaho.division.of.public.health#!/vizhome/COVID-19VaccineDataDashboard/Residence
-    overseerScript: |
+  overseerScript: |
     page.manualWait();
     await page.waitForDelay(30000);
     page.done();
