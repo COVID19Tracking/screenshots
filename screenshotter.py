@@ -147,7 +147,12 @@ class Screenshotter():
     # returns a dictionary of screenshot types to error messages, if any
     def screenshot(self, state, which_screenshot, backup_to_s3=False):
         # extract state config
-        full_state_config = self.get_state_config_from_dir(state)
+        try:
+            full_state_config = self.get_state_config_from_dir(state)
+        except Exception as err:
+            logger.error(f'Error getting config for {state}: {err}')
+            return {state: f'Error getting config for {state}: check config for errors'}
+
         if full_state_config is None:
             logger.info(f'No existing config for {state}')
             return
