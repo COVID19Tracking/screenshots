@@ -53,4 +53,9 @@ links:
   requestSettings:
     maxWait: 120000
   message: cur hosp for WA quaternary
+  
+- name: quinary
+  url: https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/PUBLIC_Tests_by_Specimen_Collection.xlsx
+  file: xlsx
+  message: downloading Excel for WA quinary
 
