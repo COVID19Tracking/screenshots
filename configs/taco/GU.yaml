@@ -10,3 +10,14 @@ links:
 - name: tertiary
   url: https://drive.google.com/file/d/1n-vrUGzEzs7rjcxXBFEbIMmeUQykuyO9/view
 
+- name: quaternary
+  url: https://ghs.guam.gov/coronavirus-covid-19
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("a[href*=\"/jic-release-no-\"]");
+    page.click("a[href*=\"/jic-release-no-\"]");
+    await page.waitForNavigation({
+     waitUntil:"domcontentloaded"});
+    await page.render.screenshot();
+    page.done();
+  message: clicking on latest GU JIC release
