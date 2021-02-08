@@ -18,20 +18,9 @@ links:
   message: downloading Excel for TX tertiary
 
 - name: quaternary
-  url: https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/0d8bdf9be927459d9cb11b9eaef6101f
-  overseerScript: |
-    page.manualWait();
-    await page.waitForDelay(20000);
-    await page.evaluate(() => {
-      document.evaluate("//div[text()='Hospitals - Statewide']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
-    });
-    page.click("div[ctpclickhere]");
-    await page.waitForDelay(20000);
-    page.done();
-  renderSettings: 
-    viewport:
-      width: 2000
-  message: clicking on "Hospitals - Statewide" tab. Also widening viewport so that tab is visible.
+  url: https://www.dshs.texas.gov/coronavirus/TexasCOVID19CaseCountData.xlsx
+  file: xlsx
+  message: downloading cases excel for TX quaternary
   
 - name: quinary
   url: https://services5.arcgis.com/ACaLB9ifngzawspq/ArcGIS/rest/services/TX_DSHS_COVID19_TestData_Service/FeatureServer/4/query?where=1%3D1&outFields=%2A&orderByFields=Date+desc&resultRecordCount=1
