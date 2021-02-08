@@ -26,12 +26,12 @@ links:
 
 - name: tertiary
   eval: True
-  url: date.today().strftime("https://www.mass.gov/doc/weekly-covid-19-public-health-report-%B-%d-%Y/download").lower()
+  url: date.today().strftime("https://www.mass.gov/doc/weekly-covid-19-public-health-report-%B-%-d-%Y/download").lower()
   file: pdf
   message: downloading pdf for MA weekly health report
   
 - name: quaternary
   eval: True
-  url: date.today().strftime("https://www.mass.gov/doc/covid-19-raw-data-%B-%d-%Y/download").lower()
+  url: date.today().strftime("https://www.mass.gov/doc/covid-19-raw-data-%B-%-d-%Y/download").lower()
   file: xlsx
   message: downloading xlsx for MA daily raw data
