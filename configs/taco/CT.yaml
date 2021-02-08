@@ -10,3 +10,5 @@ links:
 - name: tertiary
   url: https://data.ct.gov/api/id/rf3k-f8fg.json?%24query=select+%2A+order+by+date+desc+limit+1
 
+- name: quaternary
+  url: https://data.ct.gov/resource/qfkt-uahj.json?%24query=select+sum%28number_of_pcr_tests%29%2C+sum%28number_of_pcr_positives%29%2C+sum%28number_of_pcr_negatives%29%2C+sum%28number_of_ag_tests%29%2C+sum%28number_of_ag_positives%29%2C+sum%28number_of_ag_negatives%29%2C+max%28date%29
