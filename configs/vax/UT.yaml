@@ -3,3 +3,8 @@ state: UT
 links:
 - name: vaccine
   url: https://coronavirus-dashboard.utah.gov/#vaccines
+  renderSettings: 
+    viewport:
+      height: 3000
+      width: 1400
+  message: UT dashboard doesn't render in phantomjscloud unless we set a viewport
