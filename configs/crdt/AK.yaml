@@ -3,4 +3,5 @@ state: AK
 links: 
 - name: primary
   url: https://opendata.arcgis.com/datasets/ebf62bbdba59497a9dba00aed0c17078_0.csv
+  file: csv
 
