@@ -7,7 +7,7 @@ links:
      page.manualWait();
      await page.waitForDelay(60000);
      page.done();
-   message: waiting 60 sec to load MN vaccine
+  message: waiting 60 sec to load MN vaccine
    
 - name: vaccinedistribution
   url: https://www.health.state.mn.us/diseases/coronavirus/vaccine/stats/distrib.html
@@ -15,7 +15,7 @@ links:
      page.manualWait();
      await page.waitForDelay(60000);
      page.done();
-   message: waiting 60 sec to load MN vaccine
+  message: waiting 60 sec to load MN vaccine
    
 - name: vaccineadmin
   url: https://health.state.mn.us/diseases/coronavirus/vaccine/stats/admin.html#agend1
@@ -23,4 +23,4 @@ links:
      page.manualWait();
      await page.waitForDelay(60000);
      page.done();
-   message: waiting 60 sec to load MN vaccine
+  message: waiting 60 sec to load MN vaccine
