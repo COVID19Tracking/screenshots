@@ -1,0 +1,5 @@
+state: KS
+
+links:
+- name: vaccine
+  url: https://www.kansasvaccine.gov/158/Data
