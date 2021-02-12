@@ -2,4 +2,9 @@ state: IN
 
 links:
 - name: vaccine
-  url: https://www.coronavirus.in.gov/2680.htm
+  url: https://www.coronavirus.in.gov/vaccine/2680.htm
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(50000);
+    page.done();
+  message: wait 50 seconds for IN vaccine
