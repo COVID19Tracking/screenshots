@@ -2,9 +2,6 @@ state: GA
 
 links:
 - name: vaccine
-  url: https://dph.georgia.gov/
-
-- name: vaccine_secondary
   url: https://experience.arcgis.com/experience/3d8eea39f5c1443db1743a4cb8948a9c/
   overseerScript: |
     page.manualWait();
