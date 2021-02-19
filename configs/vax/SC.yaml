@@ -3,3 +3,11 @@ state: SC
 links:
 - name: vaccine
   url: https://scdhec.gov/covid19/covid-19-vaccine-allocation
+
+- name: vaccine
+  url: https://scdhec.gov/covid19/covid-19-vaccination-dashboard
+  overseerScript: |
+     page.manualWait();
+     await page.waitForDelay(30000);
+     page.done();
+  message: waiting 30 seconds for SC vaccine
