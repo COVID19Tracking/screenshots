@@ -10,7 +10,7 @@ links:
     await page.click('[aria-label*="Go to entry 2: COVID-19 Cases"]');
     await page.waitForDelay(20000);
     page.done();
-  message: waiting 30 sec to load MT 
+  message: waiting 30 sec to load MT
 
 - name: secondary
   url: https://dphhs.mt.gov/publichealth/cdepi/diseases/coronavirusmt/demographics
