@@ -5,7 +5,7 @@ links:
   url: https://montana.maps.arcgis.com/apps/MapSeries/index.html?appid=7c34f3412536439491adcc2103421d4b
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(10000);
+    await page.waitForDelay(20000);
     await page.waitForSelector('[aria-label*="Go to entry 2: COVID-19 Cases"]');
     await page.click('[aria-label*="Go to entry 2: COVID-19 Cases"]');
     await page.waitForDelay(20000);
