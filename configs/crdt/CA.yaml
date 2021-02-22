@@ -1,14 +1,13 @@
 state: CA
 
-links: 
+links:
 - name: primary
   url: https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/COVID-19/Race-Ethnicity.aspx
-  renderSettings: 
+  renderSettings:
     viewport:
-      height: 6500
+      height: 7000
       width: 1400
-  message: using viewport height 6500 for CA
+  message: using viewport height 7000 for CA
 
 - name: secondary
   url: https://covid19.ca.gov/
-
