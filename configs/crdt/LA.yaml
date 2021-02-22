@@ -1,6 +1,8 @@
 state: LA
 
-links: 
+links:
 - name: primary
   url: http://ldh.la.gov/Coronavirus/
 
+- name: secondary
+  url: https://ldh.la.gov/index.cfm/page/4065
