@@ -1,9 +1,17 @@
 state: SC
 
-links: 
+links:
 - name: primary
   url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-testing-data-projections-covid-19
 
 - name: secondary
-  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-demographic-data-covid-19
-
+  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/south-carolina-county-level-data-covid-19
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.waitforSelector("div.tab-button-object")
+    await page.evaluate(() => {
+      document.evaluate("//div[contains(text(),'Go to Hospitalizations')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    page.done();
