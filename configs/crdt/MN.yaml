@@ -3,6 +3,17 @@ state: MN
 links:
 - name: primary
   url: https://www.health.state.mn.us/diseases/coronavirus/situation.html#raceeth1
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[href='#raceeth1']");
+    page.click("[href='#raceeth1']");
+    await page.waitForDelay(60000);
+    page.done();
+  renderSettings:
+    viewport:
+      height: 6000
+      width: 1400
+  message: click to toggle race/ethnicity table
 
 - name: secondary
   eval: True
