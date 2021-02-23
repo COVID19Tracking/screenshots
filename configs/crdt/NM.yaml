@@ -1,9 +1,13 @@
 state: NM
 
-links: 
+links:
 - name: primary
   url: https://cvprovider.nmhealth.org/public-dashboard.html#
+  renderSettings:
+    viewport:
+      height: 2000
+      width: 1400
+  message: using viewport height 2000 for CA
 
 - name: secondary
   url: https://cvmodeling.nmhealth.org/medical-advisory-team/modeling-updates/
-
