@@ -1,6 +1,113 @@
 state: WI
 
-links: 
+links:
 - name: primary
-  url: https://www.dhs.wisconsin.gov/covid-19/data.htm
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofconfirmedprobableCOVID-19casesby-group-MOBILE/CaseDB2/butleoljdl@accounts.wistate.us/ed25311e-7f8a-4c7d-aee8-97b28850f0ac?:embed=y&:display_spinner=no&:showAppBanner=false&:embed_code_version=3&:loadOrderID=4&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: confirmed cases by race
 
+- name: secondary
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofconfirmedprobableCOVID-19casesby-group-MOBILE/CaseDB2/butleoljdl@accounts.wistate.us/ed25311e-7f8a-4c7d-aee8-97b28850f0ac?:embed=y&:display_spinner=no&:showAppBanner=false&:embed_code_version=3&:loadOrderID=4&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: confirmed cases by ethnicity
+
+- name: tertiary
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofconfirmedprobableCOVID-19casesby-group-MOBILE/CaseDB2/butleoljdl@accounts.wistate.us/ed25311e-7f8a-4c7d-aee8-97b28850f0ac?:embed=y&:display_spinner=no&:showAppBanner=false&:embed_code_version=3&:loadOrderID=4&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: probable cases by race
+
+- name: quaternary
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofconfirmedprobableCOVID-19casesby-group-MOBILE/CaseDB2/butleoljdl@accounts.wistate.us/ed25311e-7f8a-4c7d-aee8-97b28850f0ac?:embed=y&:display_spinner=no&:showAppBanner=false&:embed_code_version=3&:loadOrderID=4&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    await page.waitForDelay(5000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: probable cases by ethnicity
+
+- name: quinary
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofCOVID-19deathsby-group-MOBILE/DeathDB2?:embed_code_version=3&:embed=y&:loadOrderID=2&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: confirmed deaths by race
+
+- name: deaths_confirmed_ethnicity
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofCOVID-19deathsby-group-MOBILE/DeathDB2?:embed_code_version=3&:embed=y&:loadOrderID=2&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: confirmed deaths by ethnicity
+
+- name: deaths_probable_race
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofCOVID-19deathsby-group-MOBILE/DeathDB2?:embed_code_version=3&:embed=y&:loadOrderID=2&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(3) input");
+    await page.waitForDelay(5000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: probable deaths by race
+
+- name: deaths_probable_ethnicity
+  url: https://bi.wisconsin.gov/t/DHS/views/PercentofCOVID-19deathsby-group-MOBILE/DeathDB2?:embed_code_version=3&:embed=y&:loadOrderID=2&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(4) input");
+    await page.waitForDelay(5000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    page.click("#tableau_base_widget_ParameterControl_1 div[role='radio']:nth-child(2) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: probable deaths by ethnicity
+
+- name: hospitalizations_race_ethnicity
+  url: https://bi.wisconsin.gov/t/DHS/views/RacialInequitiesDB4/racialinequitiesDBburdenslider?:embed_code_version=3&:embed=y&:loadOrderID=0&:display_spinner=no&:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(6000);
+    await page.waitForSelector("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(2) input");
+    page.click("#tableau_base_widget_ParameterControl_0 div[role='radio']:nth-child(2) input");
+    await page.waitForDelay(5000);
+    page.done();
+  message: hospitalizations by combined race and ethnicity
