@@ -5,15 +5,15 @@ links:
   url: https://coronavirus.health.ny.gov/county-county-breakdown-positive-cases
   renderSettings: 
     viewport:
-      width: 5000
-  message: using viewport width 5000 for NY
+      width: 2000
+  message: using viewport width 2000 for NY
 
 - name: secondary
   url: https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Fatalities?%3Aembed=yes&%3Atoolbar=no&%3Atabs=n
   renderSettings: 
     viewport:
-      width: 5000
-  message: using viewport width 5000 for NY
+      width: 2000
+  message: using viewport width 2000 for NY
 
 - name: tertiary
   url: https://www.governor.ny.gov/keywords/coronavirus
