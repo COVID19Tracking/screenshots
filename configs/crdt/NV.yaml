@@ -1,6 +1,28 @@
 state: NV
 
-links: 
+links:
 - name: primary
-  url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9
+  url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSectiondb6b8c7cca74b0f5551f
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(150000);
+    page.done();
+  requestSettings:
+    maxWait: 240000
+  message: cases for NV primary
 
+- name: secondary
+  url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSectionada63ad3db0f5054a173
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(150000);
+    page.done();
+  message: deaths for NV secondary
+
+- name: tertiary
+  url: https://app.powerbigov.us/view?r=eyJrIjoiMjA2ZThiOWUtM2FlNS00MGY5LWFmYjUtNmQwNTQ3Nzg5N2I2IiwidCI6ImU0YTM0MGU2LWI4OWUtNGU2OC04ZWFhLTE1NDRkMjcwMzk4MCJ9&pageName=ReportSectionabae507290566271ca33
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(150000);
+    page.done();
+  message: testing for NV tertiary
