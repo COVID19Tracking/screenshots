@@ -13,6 +13,10 @@ links:
     page.click("span[ctpclickhere]");
     await page.waitForDelay(25000);
     page.done();
+  renderSettings:
+    viewport:
+      width: 700
+      height: 1900
   message: navigating to "tables" tab of dash for cases
 
 - name: secondary
@@ -31,6 +35,10 @@ links:
     page.click("[aria-label='Deceased Among Cases']", delay=500);
     await page.waitForDelay(20000);
     page.done();
+  renderSettings:
+    viewport:
+      width: 700
+      height: 1900
   message: navigating to "demographics" tab of dash and toggling deaths
 
 - name: tertiary
@@ -49,6 +57,10 @@ links:
     page.click("[aria-label='Ever Hospitalized']", delay=500);
     await page.waitForDelay(20000);
     page.done();
+  renderSettings:
+    viewport:
+      width: 700
+      height: 1900
   message: navigating to "demographics" tab of dash and toggling hospitalizations
 
 - name: quaternary
@@ -63,4 +75,8 @@ links:
     page.click("span[ctpclickhere]");
     await page.waitForDelay(25000);
     page.done();
+  renderSettings:
+    viewport:
+      width: 700
+      height: 1900
   message: navigating to "demographics" tab as cases backup
