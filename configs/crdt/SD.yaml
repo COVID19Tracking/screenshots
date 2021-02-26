@@ -1,6 +1,28 @@
 state: SD
 
-links: 
+links:
 - name: primary
-  url: https://doh.sd.gov/news/Coronavirus.aspx#SD
+  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  overseerScript: |
+    await page.waitForDelay(25000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Tables')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(25000);
+    page.done();
+  message: navigating to "tables" tab of dash
 
+- name: secondary
+  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  overseerScript: |
+    await page.waitForDelay(25000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Demographics')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(25000);
+    page.done();
+  message: navigating to "tables" tab of dash
