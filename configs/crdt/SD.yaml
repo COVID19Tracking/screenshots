@@ -2,7 +2,8 @@ state: SD
 
 links:
 - name: primary
-  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  url: https://app.powerbigov.us/view?r=eyJrIjoiZDUwODIyNGEtODdkZC00MmI4LWFmOTctZWJjOWRkYmIzNzhhIiwidCI6IjcwYWY1NDdjLTY5YWItNDE2ZC1iNGE2LTU0M2I1Y2U1MmI5OSJ9
+  message: direct link to power bi
   overseerScript: |
     await page.waitForDelay(25000);
     await page.waitForSelector("i[title='Next Page']");
@@ -12,10 +13,47 @@ links:
     page.click("span[ctpclickhere]");
     await page.waitForDelay(25000);
     page.done();
-  message: navigating to "tables" tab of dash
+  message: navigating to "tables" tab of dash for cases
 
 - name: secondary
-  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  url: https://app.powerbigov.us/view?r=eyJrIjoiZDUwODIyNGEtODdkZC00MmI4LWFmOTctZWJjOWRkYmIzNzhhIiwidCI6IjcwYWY1NDdjLTY5YWItNDE2ZC1iNGE2LTU0M2I1Y2U1MmI5OSJ9
+  message: direct link to power bi
+  overseerScript: |
+    await page.waitForDelay(25000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Demographics')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(25000);
+    page.manualWait();
+    await page.waitForSelector("[aria-label='Deceased Among Cases']");
+    page.click("[aria-label='Deceased Among Cases']", delay=500);
+    await page.waitForDelay(20000);
+    page.done();
+  message: navigating to "demographics" tab of dash and toggling deaths
+
+- name: tertiary
+  url: https://app.powerbigov.us/view?r=eyJrIjoiZDUwODIyNGEtODdkZC00MmI4LWFmOTctZWJjOWRkYmIzNzhhIiwidCI6IjcwYWY1NDdjLTY5YWItNDE2ZC1iNGE2LTU0M2I1Y2U1MmI5OSJ9
+  message: direct link to power bi
+  overseerScript: |
+    await page.waitForDelay(25000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Demographics')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(25000);
+    page.manualWait();
+    await page.waitForSelector("[aria-label='Ever Hospitalized']");
+    page.click("[aria-label='Ever Hospitalized']", delay=500);
+    await page.waitForDelay(20000);
+    page.done();
+  message: navigating to "demographics" tab of dash and toggling hospitalizations
+
+- name: quaternary
+  url: https://app.powerbigov.us/view?r=eyJrIjoiZDUwODIyNGEtODdkZC00MmI4LWFmOTctZWJjOWRkYmIzNzhhIiwidCI6IjcwYWY1NDdjLTY5YWItNDE2ZC1iNGE2LTU0M2I1Y2U1MmI5OSJ9
+  message: direct link to power bi
   overseerScript: |
     await page.waitForDelay(25000);
     await page.waitForSelector("i[title='Next Page']");
@@ -25,4 +63,4 @@ links:
     page.click("span[ctpclickhere]");
     await page.waitForDelay(25000);
     page.done();
-  message: navigating to "demographics" tab of dash
+  message: navigating to "demographics" tab as cases backup
