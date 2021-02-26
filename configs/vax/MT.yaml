@@ -1,0 +1,10 @@
+state: MT
+
+links:
+- name: primary
+  url: https://montana.maps.arcgis.com/apps/MapSeries/index.html?appid=7c34f3412536439491adcc2103421d4b
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.done();
+  message: waiting 30 sec to load MT vax dash
