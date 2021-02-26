@@ -5,13 +5,22 @@ links:
   url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/sc-testing-data-projections-covid-19
 
 - name: secondary
-  url: https://scdhec.gov/infectious-diseases/viruses/coronavirus-disease-2019-covid-19/south-carolina-county-level-data-covid-19
-  overseerScript: |
-    page.manualWait();
-    await page.waitForDelay(20000);
-    await page.waitforSelector("div.tab-button-object")
-    await page.evaluate(() => {
-      document.evaluate("//div[contains(text(),'Go to Hospitalizations')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
-    });
-    page.click("a[ctpclickhere]");
-    page.done();
+  url: https://public.tableau.com/profile/population.health.dhec#!/vizhome/shared/88Q7RT76Z
+  renderSettings:
+    viewport:
+      width: 1400
+  message: cases, using viewport width 1400
+
+- name: tertiary
+  url: https://public.tableau.com/profile/population.health.dhec#!/vizhome/shared/WMGG2H7GM
+  renderSettings:
+    viewport:
+      width: 1400
+  message: deaths, using viewport width 1400
+
+- name: quaternary
+  url: https://public.tableau.com/profile/population.health.dhec#!/vizhome/shared/C4JH93749
+  renderSettings:
+    viewport:
+      width: 1400
+  message: hospitalizations, using viewport width 1400
