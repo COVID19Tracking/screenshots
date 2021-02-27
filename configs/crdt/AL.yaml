@@ -1,6 +1,6 @@
 state: AL
 
-links: 
+links:
 - name: primary
   url: https://alpublichealth.maps.arcgis.com/apps/opsdashboard/index.html#/6d2771faa9da4a2786a509d82c8cf0f7
   overseerScript: |
@@ -23,3 +23,14 @@ links:
     page.done();
   message: clicking on tab 13 (number 15)
 
+- name: tertiary
+  url: https://alpublichealth.maps.arcgis.com/home/item.html?id=0c2185b8174646979f4abb5a45ef05c3&sublayer=3#data
+
+- name: quaternary
+  url: https://alpublichealth.maps.arcgis.com/home/item.html?id=0c2185b8174646979f4abb5a45ef05c3&sublayer=1#data
+
+- name: quinary
+  url: https://alpublichealth.maps.arcgis.com/home/item.html?id=015fd1e0d8074840ab624243a74c54c9&sublayer=1#data
+
+- name: deaths-ethnicity
+  url: https://alpublichealth.maps.arcgis.com/home/item.html?id=015fd1e0d8074840ab624243a74c54c9&sublayer=1#data
