@@ -1,6 +1,6 @@
 state: KS
 
-links: 
+links:
 - name: primary
   url: https://public.tableau.com/views/COVID-19TableauVersion2/COVID-19Overview?:embed=y&:showVizHome=no
 
@@ -10,3 +10,8 @@ links:
 - name: tertiary
   url: https://public.tableau.com/views/COVID-19TableauVersion2/TestingRates?%3Aembed=y&%3AshowVizHome=no
 
+- name: quaternary
+  url: https://public.tableau.com/views/COVID-19TableauVersion2/CaseCharacteristics?%3Aembed=y&%3AshowVizHome=no
+
+- name: quinary
+  url: https://public.tableau.com/views/COVID-19TableauVersion2/HospitalSummary?%3Aembed=y&%3AshowVizHome=no
