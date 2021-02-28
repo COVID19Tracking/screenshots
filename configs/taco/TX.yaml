@@ -23,7 +23,7 @@ links:
   message: downloading cases excel for TX quaternary
   
 - name: quinary
-  url: https://services5.arcgis.com/ACaLB9ifngzawspq/ArcGIS/rest/services/TX_DSHS_COVID19_TestData_Service/FeatureServer/4/query?where=1%3D1&outFields=%2A&orderByFields=Date+desc&resultRecordCount=1
+  url: https://services5.arcgis.com/ACaLB9ifngzawspq/ArcGIS/rest/services/TX_DSHS_COVID19_TestData_Service/FeatureServer/3/query?where=1%3D1&outFields=%2A&cacheHint=False
 
 
 
