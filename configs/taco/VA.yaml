@@ -9,3 +9,39 @@ links:
 
 - name: tertiary
   url: https://data.virginia.gov/resource/3u5k-c2gr.json?%24query=select+sum%28number_of_pcr_testing%29+as+pcr_testing%2C+sum%28number_of_positive_pcr_testing%29+as+pos_pcr_testing%2C+sum%28number_of_antibody_testing_encounters%29+as+antibody_total%2C+sum%28number_of_positive_antibody_testing_encounters%29+as+antibody_pos%2C+sum%28number_of_positive_antigen_testing_encounters%29+as+antigen_pos%2C+sum%28number_of_antigen_testing_encounters%29+as+antigen_total
+
+- name: quaternary
+  url: https://www.vdh.virginia.gov/coronavirus/coronavirus/covid-19-in-virginia-testing/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='PCR Only']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Antibody Only']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(20000);
+    page.done();
+  message: expanding combo box and selecting Antibody only
+
+- name: quinary
+  url: https://www.vdh.virginia.gov/coronavirus/coronavirus/covid-19-in-virginia-testing/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='PCR Only']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Antigen Only']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(20000);
+    page.done();
+  message: expanding combo box and selecting Antigen only
