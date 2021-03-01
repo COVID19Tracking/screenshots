@@ -1,0 +1,8 @@
+state: US
+
+links:
+- name: primary
+  url: https://covid.cdc.gov/covid-data-tracker/#demographics
+
+- name: secondary
+  url: https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic
