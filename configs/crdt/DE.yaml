@@ -4,3 +4,7 @@ links:
 - name: primary
   url: https://myhealthycommunity.dhss.delaware.gov/locations/state
 
+- name: secondary
+  url: https://myhealthycommunity.dhss.delaware.gov/locations/state/download_covid_19_data
+  file: csv
+  message: dowloading all available covid data csv

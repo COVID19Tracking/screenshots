@@ -14,3 +14,7 @@ links:
     page.done();
   message: click for DE Total Tests
 
+- name: tertiary
+  url: https://myhealthycommunity.dhss.delaware.gov/locations/state/download_covid_19_data
+  file: csv
+  message: dowloading all available covid data csv
