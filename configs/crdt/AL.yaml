@@ -32,5 +32,5 @@ links:
 - name: quinary
   url: https://alpublichealth.maps.arcgis.com/home/item.html?id=015fd1e0d8074840ab624243a74c54c9&sublayer=1#data
 
-- name: deaths-ethnicity
+- name: deaths_ethnicity
   url: https://alpublichealth.maps.arcgis.com/home/item.html?id=015fd1e0d8074840ab624243a74c54c9&sublayer=1#data
