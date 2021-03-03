@@ -3,3 +3,7 @@ state: CT
 links:
 - name: primary
   url: https://data.ct.gov/stories/s/q5as-kyim
+
+- name: secondary
+  url: https://data.ct.gov/api/views/7rne-efic/rows.csv?accessType=DOWNLOAD&bom=true&format=true
+  file: csv
