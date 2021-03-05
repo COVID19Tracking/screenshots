@@ -32,6 +32,8 @@ class S3Backup():
             extra_args = {'ContentType': 'application/pdf', 'ContentDisposition': 'inline'}
         elif local_path.endswith('.xlsx') or local_path.endswith('.xls'):
             extra_args = {'ContentType': 'application/vnd.ms-excel', 'ContentDisposition': 'inline'}
+        elif local_path.endswith('.zip'):
+            extra_args = {'ContentType': 'application/zip'}
 
         s3_path = self.get_s3_path(local_path, state)
         logger.info(f'Uploading file at {local_path} to {s3_path}')
