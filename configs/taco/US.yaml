@@ -12,3 +12,9 @@ links:
     await page.waitForDelay(5000);
     page.done();
   message: expand data table on CDC testing website
+
+- name: ctp_long_formulas
+  renderSettings:
+    viewport:
+      height: 10000
+  url: https://docs.google.com/spreadsheets/d/1WVnWoQ28lQgkvuVwIaY63k8AbjxSrxkdYzuYCT-CL6M/edit?usp=sharing
