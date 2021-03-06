@@ -2,4 +2,12 @@ state: AR
 
 links:
 - name: vaccine
+  url: https://experience.arcgis.com/experience/c2ef4a4fcbe5458fbf2e48a21e4fece9
+  overseerScript: |
+     page.manualWait();
+     await page.waitForDelay(30000);
+     page.done();
+  message: waiting 30 sec to load AR vaccine
+  
+- name: vaccine_secondary
   url: https://www.healthy.arkansas.gov/programs-services/topics/covid-19-vaccination-plan
