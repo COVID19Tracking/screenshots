@@ -48,3 +48,6 @@ links:
     await page.waitForDelay(5000);
     page.done();
   message: click button twice for PR probable deaths ("Probables")
+
+- name: pr_statistics_site
+  url: https://covid19datos.salud.gov.pr
