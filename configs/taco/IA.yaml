@@ -5,7 +5,7 @@ links:
   url: https://coronavirus.iowa.gov/
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(30000);
+    await page.waitForDelay(60000);
     page.done();
   renderSettings: 
     viewport:
@@ -17,7 +17,7 @@ links:
   url: https://coronavirus.iowa.gov/pages/case-counts
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(60000);
+    await page.waitForDelay(80000);
     page.done();
   message: adding manual wait for IA secondary
 
@@ -25,7 +25,7 @@ links:
   url: https://coronavirus.iowa.gov/pages/rmcc-data
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(45000);
+    await page.waitForDelay(80000);
     page.done();
   message: wait for IA tertiary
 
@@ -33,7 +33,7 @@ links:
   url: https://coronavirus.iowa.gov/pages/serology-testing
   overseerScript: |
     page.manualWait();
-    await page.waitForDelay(45000);
+    await page.waitForDelay(80000);
     page.done();
   message: wait for IA quaternary
 
