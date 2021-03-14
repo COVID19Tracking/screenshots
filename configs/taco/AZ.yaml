@@ -44,4 +44,11 @@ links:
     viewport:
       width: 2400
   message: wide viewport for AZ cur icu graph
+  
+- name: pcr_tests_specimens
+  url: https://tableau.azdhs.gov/views/ELRv2testlevelandpeopletested/TestsConducted?%3AisGuestRedirectFromVizportal=y&%3Aembed=y&Choose%20Test%20Type=Diagnostic
+  
+- name: serology_tests_specimens
+  url: https://tableau.azdhs.gov/views/ELRv2testlevelandpeopletested/TestsConducted?%3AisGuestRedirectFromVizportal=y&%3Aembed=y&Choose%20Test%20Type=Serology
+
 
