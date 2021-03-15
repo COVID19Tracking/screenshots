@@ -10,7 +10,7 @@ links:
   message: using viewport height 3000 for CA
 
 - name: secondary
-  url: https://public.tableau.com/views/COVID-19CasesDashboard_15931020425010/Cases?:embed=y&:showVizHome=no
+  url: https://public.tableau.com/profile/ca.open.data#!/vizhome/COVID-19CasesDashboardv2_0/CaseStatistics
 
 - name: tertiary
   url: https://public.tableau.com/views/COVID-19HospitalsDashboard/Hospitals?:embed=y&:showVizHome=no
