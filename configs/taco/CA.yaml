@@ -14,4 +14,8 @@ links:
 
 - name: tertiary
   url: https://public.tableau.com/views/COVID-19HospitalsDashboard/Hospitals?:embed=y&:showVizHome=no
+  
+- name: quaternary 
+  url: https://public.tableau.com/profile/ca.open.data#!/vizhome/COVID-19CasesDashboardv2_0/TestingStatistics
+
 
