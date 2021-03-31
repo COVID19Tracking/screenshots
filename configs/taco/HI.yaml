@@ -26,12 +26,4 @@ links:
   message: clicking on 'ICU Beds and Ventilators' tab for HI quaternary
 
 - name: quinary
-  url: https://hawaiicovid19.com/dashboard/
-  overseerScript: |
-    page.manualWait();
-    await page.waitForDelay(80000);
-    page.done();
-  requestSettings: 
-    maxWait: 90000
-  message: adding manual wait for HI of 80 seconds and max wait
-
+  url: https://hiema-hub.hawaii.gov/pages/covid-dashboard
