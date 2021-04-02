@@ -7,6 +7,8 @@ links:
     page.manualWait();
     await page.waitForDelay(60000);
     page.done();
+  requestSettings: 
+    maxWait: 60000
   message: waiting 60 sec to load NJ primary
   
 - name: secondary
