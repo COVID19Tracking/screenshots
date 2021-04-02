@@ -11,6 +11,8 @@ links:
     viewport:
       height: 3000
       width: 1400
+requestSettings: 
+    maxWait: 90000
   message: adding manual wait and using viewport height 3000 for IA
 
 - name: secondary
@@ -18,7 +20,9 @@ links:
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(80000);
-    page.done();
+    page.done(); 
+  requestSettings: 
+    maxWait: 90000
   message: adding manual wait for IA secondary
 
 - name: tertiary
@@ -27,6 +31,8 @@ links:
     page.manualWait();
     await page.waitForDelay(80000);
     page.done();
+  requestSettings: 
+    maxWait: 90000
   message: wait for IA tertiary
 
 - name: quaternary
@@ -35,5 +41,7 @@ links:
     page.manualWait();
     await page.waitForDelay(80000);
     page.done();
+  requestSettings: 
+    maxWait: 90000
   message: wait for IA quaternary
 
