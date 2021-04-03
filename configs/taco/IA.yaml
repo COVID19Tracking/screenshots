@@ -11,7 +11,7 @@ links:
     viewport:
       height: 3000
       width: 1400
-requestSettings: 
+  requestSettings:
     maxWait: 90000
   message: adding manual wait and using viewport height 3000 for IA
 
