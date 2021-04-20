@@ -54,3 +54,16 @@ links:
       width: 1400
   message: clicking on "Deaths" tab for AR quinary
 
+- name: cases
+  url: https://adem.maps.arcgis.com/apps/opsdashboard/index.html#/fd6874664d404993814de4d5a65d5cfd
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("span.ember-view.tab-title:nth-of-type(2)");
+    page.click("span.ember-view.tab-title:nth-of-type(2)");
+    await page.waitForDelay(10000);
+    page.done();
+  renderSettings: 
+    clipRectangle:
+      height: 1400
+      width: 1400
+  message: clicking on "Cases" tab for AR
