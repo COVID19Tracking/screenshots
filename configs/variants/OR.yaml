@@ -1,0 +1,8 @@
+state: OR
+
+links:
+- name: primary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19?utm_medium=email&utm_source=govdelivery#!/vizhome/GISAIDVariantDashboardUpdated/OregonVariantDashboard
+
+- name: secondary
+  url: https://public.tableau.com/profile/oregon.health.authority.covid.19?utm_medium=email&utm_source=govdelivery#!/vizhome/GISAIDVariantDashboardUpdated/VariantTimeSeries

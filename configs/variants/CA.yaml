@@ -1,0 +1,9 @@
+state: CA
+
+links:
+- name: primary
+  url: https://www.cdph.ca.gov/Programs/CID/DCDC/Pages/COVID-19/COVID-Variants.aspx
+  renderSettings:
+    viewport:
+      height: 6000
+      width: 1400

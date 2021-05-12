@@ -1,0 +1,11 @@
+state: US
+
+links:
+- name: variant_proportions
+  url: https://covid.cdc.gov/covid-data-tracker/#variant-proportions
+
+- name: published_sequences
+  url: https://covid.cdc.gov/covid-data-tracker/#published-covid-sequences
+
+- name: global_map
+  url: https://covid.cdc.gov/covid-data-tracker/#global-variant-report-map

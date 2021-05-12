@@ -1,0 +1,20 @@
+state: NJ
+
+links:
+- name: primary
+  url: https://njhealth.maps.arcgis.com/apps/MapSeries/index.html?appid=50c2c6af93364b4da9c0bf6327c04b45&folderid=e5d6362c0f1f4f9684dc650f00741b24
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    await page.waitForSelector("button[aria-label='Go to entry 2: Cases and Trends']");
+    page.click("button[aria-label='Go to entry 2: Cases and Trends']");
+    await page.waitForDelay(10000);
+
+    page.click("div.tab-nav .tab-title:nth-child(3)");
+
+    await page.waitForDelay(10000);
+    page.done();
+  message: click on 'Cases and Trends' and 'Variants' tab for NJ primary
+
+- name: secondary
+  url: https://services7.arcgis.com/Z0rixLlManVefxqY/ArcGIS/rest/services/variants/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=html&token=

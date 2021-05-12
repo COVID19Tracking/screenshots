@@ -1,0 +1,5 @@
+state: RI
+
+links:
+- name: primary
+  url: https://ri-department-of-health-covid-19-variant-data-rihealth.hub.arcgis.com/

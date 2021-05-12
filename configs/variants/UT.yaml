@@ -1,0 +1,10 @@
+state: UT
+
+links:
+- name: primary
+  url: https://coronavirus-dashboard.utah.gov/trends.html
+  renderSettings:
+    clipRectangle:
+      top: 1200
+      height: 3200
+      width: 1400

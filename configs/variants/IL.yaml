@@ -1,0 +1,5 @@
+state: IL
+
+links:
+- name: primary
+  url: https://www.dph.illinois.gov/covid19/variants

@@ -1,0 +1,5 @@
+state: ID
+
+links:
+- name: primary
+  url: https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Testing?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y

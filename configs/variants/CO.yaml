@@ -1,0 +1,16 @@
+state: CO
+
+links:
+- name: primary
+  url: https://covid19.colorado.gov/data
+  overseerScript: |
+    await page.waitForSelector("a.ckeditor-accordion-toggler");
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'Variants of concern')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    page.done();
+  renderSettings:
+    viewport:
+      width: 2000
+  message: clicking on variant data summary toggles for CO primary
