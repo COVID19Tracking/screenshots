@@ -1,0 +1,7 @@
+state: AK
+
+links:
+- name: primary
+  url: http://dhss.alaska.gov/dph/Labs/Documents/AKSeqCon_GenomicSituationReport.pdf
+  file: pdf
+  message: downloading pdf

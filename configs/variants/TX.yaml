@@ -1,0 +1,5 @@
+state: TX
+
+links:
+- name: primary
+  url: https://dshs.texas.gov/news/updates.shtm?terms=covid-19%20variant#variants

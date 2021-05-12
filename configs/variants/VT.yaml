@@ -1,0 +1,5 @@
+state: VT
+
+links:
+- name: primary
+  url: https://www.healthvermont.gov/covid-19/current-activity/covid-19-communities

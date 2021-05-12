@@ -1,0 +1,5 @@
+state: WI
+
+links:
+- name: primary
+  url: https://www.dhs.wisconsin.gov/covid-19/variants.htm

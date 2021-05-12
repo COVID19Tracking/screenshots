@@ -1,0 +1,7 @@
+state: MS
+
+links:
+- name: primary
+  url: https://msdh.ms.gov/msdhsite/_static/resources/13324.pdf
+  file: pdf
+  message: downloading pdf

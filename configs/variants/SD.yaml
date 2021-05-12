@@ -1,0 +1,15 @@
+state: SD
+
+links:
+- name: primary
+  url: https://doh.sd.gov/COVID/Dashboard.aspx
+  overseerScript: |
+    await page.waitForDelay(20000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.evaluate(() => {
+      document.evaluate("//span[contains(text(),'Tables')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(28000);
+    page.done();
+  message: navigating to "tables" tab of dash

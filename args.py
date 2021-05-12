@@ -54,6 +54,9 @@ group.add_argument('--screenshot-ltc-urls', dest='ltc_urls', action='store_true'
 group.add_argument('--screenshot-vax-urls', dest='vax_urls', action='store_true', default=False,
     help='Screenshot vaccine data URLs')
 
+group.add_argument('--screenshot-variant-urls', dest='variant_urls', action='store_true', default=False,
+    help='Screenshot variant data URLs')
+
 # Allows the user to specify a primary, secondary, etc. screenshot to take
 # If this argument is not present, all screenshots will be taken
 parser.add_argument('--which-screenshot', default='',
