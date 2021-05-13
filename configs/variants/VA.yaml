@@ -1,0 +1,5 @@
+state: VA
+
+links: 
+- name: primary
+  url: https://www.vdh.virginia.gov/coronavirus/covid-19-data-insights/variants-of-concern/
