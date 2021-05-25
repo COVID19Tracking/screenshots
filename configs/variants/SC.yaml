@@ -2,13 +2,4 @@ state: SC
 
 links:
 - name: primary
-  url: https://public.tableau.com/views/RegionalVariantDashboard/Story1?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:language=en&publish=yes&:loadOrderID=0
-  overseerScript: |
-    page.manualWait();
-    await page.waitForSelector(".tab-widget");
-    await page.evaluate(() => {
-      document.evaluate("//div[contains(text(),'Variants')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
-    });
-    page.click("div[ctpclickhere]");
-    await page.waitForDelay(8000);
-    page.done();
+  url: https://public.tableau.com/shared/WKPCJQJ9B?:display_count=y&:origin=viz_share_link
