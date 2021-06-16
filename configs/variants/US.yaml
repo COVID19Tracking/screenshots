@@ -9,3 +9,6 @@ links:
 
 - name: global_map
   url: https://covid.cdc.gov/covid-data-tracker/#global-variant-report-map
+  
+- name: breakthrough_cases
+  url: https://www.cdc.gov/vaccines/covid-19/health-departments/breakthrough-cases.html
