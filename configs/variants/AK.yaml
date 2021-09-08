@@ -2,6 +2,6 @@ state: AK
 
 links:
 - name: primary
-  url: http://hss.state.ak.us/covid19/humancov/AKSeqCon_GenomicSituationReport.pdf
+  url: http://dhss.alaska.gov/dph/epi/id/siteassets/pages/HumanCoV/AKSeqCon_GenomicSituationReport.pdf
   file: pdf
   message: downloading pdf

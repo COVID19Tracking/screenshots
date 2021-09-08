@@ -1,0 +1,10 @@
+state: MD
+
+links:
+- name: primary
+  url: https://coronavirus.maryland.gov
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(60000);
+    page.done();
+  message: waiting for MD dash to load

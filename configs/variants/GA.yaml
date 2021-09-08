@@ -1,0 +1,8 @@
+state: GA
+
+links:
+- name: primary
+  url: https://dph.georgia.gov/document/document/covid-19-among-fully-vaccinated-people-graphic/download
+  file: pdf
+  message: downloading pdf
+

@@ -1,0 +1,5 @@
+state: OH
+
+links:
+- name: primary
+  url: https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards/covid-19-vaccine/breakthrough-dashboard
