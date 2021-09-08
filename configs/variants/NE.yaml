@@ -1,0 +1,10 @@
+state: NE
+
+links:
+- name: primary
+  url: https://dhhs.ne.gov/Pages/COVID-19-Weekly-Update.aspx
+  renderSettings:
+    viewport:
+      height: 3500
+      width: 1400
+  message: setting viewport for NE page
