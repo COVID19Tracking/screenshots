@@ -1,0 +1,5 @@
+state: IN
+
+links:
+- name: primary
+  url: https://www.coronavirus.in.gov/vaccine/2680.htm

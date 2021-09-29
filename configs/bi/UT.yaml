@@ -1,0 +1,14 @@
+state: UT
+
+links:
+- name: primary
+  url: https://coronavirus.utah.gov/case-counts/
+  renderSettings:
+    clipRectangle:
+      top: 1200
+      height: 3200
+      width: 1400
+
+- name: secondary
+  url: https://coronavirus-dashboard.utah.gov/Utah_COVID19_data.zip
+  file: zip

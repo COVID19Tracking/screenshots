@@ -5,6 +5,3 @@ links:
   url: https://msdh.ms.gov/msdhsite/_static/resources/13324.pdf
   file: pdf
   message: downloading pdf
-
-- name: secondary
-  url: https://msdh.ms.gov/msdhsite/_static/14,23549,420,971.html

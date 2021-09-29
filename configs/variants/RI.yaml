@@ -3,15 +3,3 @@ state: RI
 links:
 - name: primary
   url: https://ri-department-of-health-covid-19-variant-data-rihealth.hub.arcgis.com/
-
-- name: secondary
-  url: https://ri-department-of-health-covid-19-vaccine-data-rihealth.hub.arcgis.com
-  overseerScript: |
-    page.manualWait();
-    await page.waitForDelay(60000);
-    page.done();
-  message: waiting for RI vaccine data dash
-
-- name: tertiary
-  url: https://datastudio.google.com/u/0/reporting/a0d242bf-a367-47cd-b9b7-1add9f2c475c/page/MsaWC
-  message: alternative view of breakthrough data in case the dash (secondary) does not load
