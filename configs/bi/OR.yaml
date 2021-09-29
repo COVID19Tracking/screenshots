@@ -1,0 +1,5 @@
+state: OR
+
+links:
+- name: primary
+  url: https://www.oregon.gov/oha/covid19/Documents/DataReports/Breakthrough-Case-Report.pdf

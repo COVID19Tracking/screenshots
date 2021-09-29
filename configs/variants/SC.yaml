@@ -3,6 +3,3 @@ state: SC
 links:
 - name: primary
   url: https://public.tableau.com/shared/WKPCJQJ9B?:display_count=y&:origin=viz_share_link
-
-- name: secondary
-  url: https://scdhec.gov/covid19/covid-19-data/breakthrough-cases-tracking-disease-infection-after-vaccination

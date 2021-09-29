@@ -3,6 +3,3 @@ state: VA
 links: 
 - name: primary
   url: https://www.vdh.virginia.gov/coronavirus/covid-19-data-insights/variants-of-concern/
-
-- name: secondary
-  url: https://www.vdh.virginia.gov/coronavirus/covid-19-in-virginia/covid-19-cases-by-vaccination-status/

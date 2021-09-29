@@ -1,0 +1,5 @@
+state: US
+
+links:
+- name: breakthrough_cases
+  url: https://www.cdc.gov/vaccines/covid-19/health-departments/breakthrough-cases.html
