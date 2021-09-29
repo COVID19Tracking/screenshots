@@ -42,6 +42,8 @@ def config_dir_from_args(args):
         subdir = 'vax'
     elif args.variant_urls:
         subdir = 'variants'
+    elif args.bi_urls:
+        subdir = 'bi'
 
     return os.path.join(os.path.dirname(__file__), 'configs', subdir)
 
@@ -64,6 +66,8 @@ def run_type_from_args(args):
         return 'vaccine'
     elif args.variant_urls:
         return 'variants'
+    elif args.bi_urls:
+        return 'bi'
     raise ValueError('no run type specified in args: %s' % args)
 
 
