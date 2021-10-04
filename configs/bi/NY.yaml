@@ -1,0 +1,5 @@
+state: NY
+
+links:
+- name: primary
+  url: https://covid19vaccine.health.ny.gov/covid-19-breakthrough-data-report
