@@ -1,0 +1,20 @@
+state: ND
+
+links:
+- name: primary
+  url: https://www.health.nd.gov/diseases-conditions/coronavirus/north-dakota-coronavirus-cases
+  overseerScript: |
+    await page.waitForDelay(10000);
+    await page.waitForSelector("i[title='Next Page']");
+    await page.click("i[title='Next Page']");
+    await page.waitForDelay(5000);
+    await page.click("i[title='Next Page']");
+    await page.waitForDelay(5000);
+    await page.click("i[title='Next Page']");
+    await page.waitForDelay(5000);
+    await page.click("i[title='Next Page']");
+    await page.waitForDelay(120000);
+    page.done();
+  requestSettings:
+    maxWait: 180000
+  message: selecting Breakthrough cases tab
