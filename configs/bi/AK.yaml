@@ -2,6 +2,16 @@ state: AK
 
 links:
 - name: primary
-  url: http://dhss.alaska.gov/dph/epi/id/siteassets/pages/HumanCoV/AKSeqCon_GenomicSituationReport.pdf
-  file: pdf
-  message: downloading pdf
+  url: https://dhss.alaska.gov/dph/Epi/id/Pages/COVID-19/communications.aspx
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    await await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'weekly update')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("a[ctpclickhere]");
+    await page.waitForNavigation({
+     waitUntil:"domcontentloaded"});
+    await page.render.screenshot();
+    page.done();
+  message: click on the first weekly update link
