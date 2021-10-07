@@ -1,13 +1,13 @@
-state: AK
+state: DE
 
 links:
 - name: primary
-  url: https://dhss.alaska.gov/dph/Epi/id/Pages/COVID-19/communications.aspx
+  url: https://news.delaware.gov/tag/covid-19/
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(10000);
     await await page.evaluate(() => {
-      document.evaluate("//a[contains(text(),'weekly update')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+      document.evaluate("//a[contains(text(),'Weekly COVID-19 Update')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
     });
     page.click("a[ctpclickhere]");
     await page.waitForNavigation({
