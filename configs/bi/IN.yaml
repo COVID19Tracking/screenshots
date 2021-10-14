@@ -3,3 +3,10 @@ state: IN
 links:
 - name: primary
   url: https://www.coronavirus.in.gov/vaccine/2680.htm
+
+- name: secondary
+  url: https://datavizpublic.in.gov/views/Dashboard/Breakthrough?:isGuestRedirectFromVizportal=y&:embed=y
+  renderSettings:
+    viewport:
+      height: 3000
+      width: 1400
