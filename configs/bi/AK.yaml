@@ -15,3 +15,7 @@ links:
     await page.render.screenshot();
     page.done();
   message: click on the first weekly update link
+
+- name: secondary
+  url: https://dhss.alaska.gov/dph/epi/id/siteassets/pages/HumanCoV/COVID_monthly_update.pdf
+  file: pdf
