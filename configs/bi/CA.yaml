@@ -7,3 +7,28 @@ links:
     viewport:
       height: 3000
       width: 1400
+
+- name: post-vax-cases
+  url: https://covid19.ca.gov/state-dashboard/#postvax-status
+
+- name: post-vax-hospitalizations
+  url: https://covid19.ca.gov/state-dashboard/#postvax-status
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(2000);
+    await page.waitForSelector("button.hospitalizations");
+    page.click("button.hospitalizations")
+    await page.waitForFunction(()=>document.querySelector("#main-content").textContent!=="");
+    page.done();
+  message: click on "Hospitalizations"
+
+- name: post-vax-deaths
+  url: https://covid19.ca.gov/state-dashboard/#postvax-status
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(2000);
+    await page.waitForSelector("button.deaths");
+    page.click("button.deaths")
+    await page.waitForFunction(()=>document.querySelector("#main-content").textContent!=="");
+    page.done();
+  message: click on "Deaths"

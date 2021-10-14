@@ -12,3 +12,10 @@ links:
 - name: secondary
   url: https://coronavirus-dashboard.utah.gov/Utah_COVID19_data.zip
   file: zip
+
+- name: risk
+  url: https://coronavirus-dashboard.utah.gov/risk.html
+  renderSettings:
+    clipRectangle:
+      height: 8000
+      width: 1400

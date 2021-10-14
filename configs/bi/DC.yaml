@@ -1,0 +1,22 @@
+state: DC
+
+links:
+- name: case-rates-cases
+  url: https://dataviz1.dc.gov/t/OCTO/views/Vaccine_Public/CaseRates?%3Aembed=y&%3AshowVizHome=no&%3Aembed_code_version=3&%3Atabs=false&%3Adisplay_spinner=no&%3AloadOrderID=5
+  message: this dash is the result of clicking on "Breakthrough Cases", then "Case Rates" -> "Cases"
+
+- name: case-rates-hospitalizations
+  url: https://dataviz1.dc.gov/t/OCTO/views/Vaccine_Public/CaseRates-Hospitalizations?%3Aembed=y&%3AshowVizHome=no&%3Aembed_code_version=3&%3Atabs=false&%3Adisplay_spinner=no&%3AloadOrderID=5
+  message: this dash is the result of clicking on "Breakthrough Cases", then "Case Rates" -> "Hospitalizations"
+
+- name: case-rates-deaths
+  url: https://dataviz1.dc.gov/t/OCTO/views/Vaccine_Public/CaseRates-Deaths?%3Aembed=y&%3AshowVizHome=no&%3Aembed_code_version=3&%3Atabs=false&%3Adisplay_spinner=no&%3AloadOrderID=5
+  message: this dash is the result of clicking on "Breakthrough Cases", then "Case Rates" -> "Deaths"
+
+- name: case-chronology
+  url: https://dataviz1.dc.gov/t/OCTO/views/Vaccine_Public/CaseChronology?%3Aembed=y&%3AshowVizHome=no&%3Aembed_code_version=3&%3Atabs=false&%3Adisplay_spinner=no&%3AloadOrderID=5
+  message: this dash is the result of clicking on "Breakthrough Cases", then "Case Chronology"
+
+- name: hospitalized-deceased
+  url: https://dataviz1.dc.gov/t/OCTO/views/Vaccine_Public/MedicalOverview-Hospitalized?%3Aembed=y&%3AshowVizHome=no&%3Aembed_code_version=3&%3Atabs=false&%3Adisplay_spinner=no&%3AloadOrderID=5
+  message: this dash is the result of clicking on "Breakthrough Cases", then "Hospitalized/Deceased"
