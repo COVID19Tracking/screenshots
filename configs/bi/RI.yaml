@@ -12,7 +12,3 @@ links:
 - name: secondary
   url: https://datastudio.google.com/u/0/reporting/d8e4680b-7cf1-4a70-860b-7bbf5e0bf9a2/page/D0DYC
   message: alternative view of breakthrough infections data in case the dash (secondary) does not load
-
-- name: tertiary
-  url: https://datastudio.google.com/u/0/reporting/a0d242bf-a367-47cd-b9b7-1add9f2c475c/page/MsaWC
-  message: alternative view of breakthrough cases data in case the dash (secondary) does not load
