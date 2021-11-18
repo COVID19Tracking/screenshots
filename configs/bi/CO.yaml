@@ -14,3 +14,6 @@ links:
     viewport:
       width: 2000
   message: clicking on variant data summary toggles for CO primary
+
+- name: vaccine_breakthrough
+  url: https://covid19.colorado.gov/vaccine-breakthrough
