@@ -2,4 +2,38 @@ state: VA
 
 links: 
 - name: primary
-  url: https://www.vdh.virginia.gov/coronavirus/covid-19-in-virginia/covid-19-cases-by-vaccination-status/
+  url: https://www.vdh.virginia.gov/coronavirus/see-the-numbers/covid-19-in-virginia/covid-19-cases-by-vaccination-status/
+
+- name: hospitalizations
+  url: https://vdhpublicdata.vdh.virginia.gov/views/COVID-19CasesbyVaccinationStatus/COVID-19CasesbyVaccinationStatus
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='Infections']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Hospitalizations']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(20000);
+    page.done();
+
+- name: deaths
+  url: https://vdhpublicdata.vdh.virginia.gov/views/COVID-19CasesbyVaccinationStatus/COVID-19CasesbyVaccinationStatus
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(20000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabComboBoxName' and text()='Infections']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("span[ctpclickhere]");
+    await page.waitForDelay(10000);
+    await page.evaluate(() => {
+      document.evaluate("//span[@class='tabMenuItemName' and text()='Deaths']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere2", "ctpclickhere2");
+    });
+    page.click("span[ctpclickhere2]");
+    await page.waitForDelay(20000);
+    page.done();

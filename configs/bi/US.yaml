@@ -6,10 +6,6 @@ links:
 
 - name: cases_by_vax_status
   url: https://covid.cdc.gov/covid-data-tracker/#rates-by-vaccine-status
-  renderSettings:
-    clipRectangle:
-      height: 3400
-      width: 1400
   overseerScript: |
     page.manualWait();
     await page.waitForDelay(15000);

@@ -1,0 +1,9 @@
+state: WY
+
+links:
+- name: primary
+  url: https://public.tableau.com/app/profile/courtney.tillman/viz/WYCOVID-19Dashboard/Breakthrough
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(10000);
+    page.done();

@@ -5,3 +5,13 @@ links:
 - name: primary
   url: https://datastudio.google.com/u/0/reporting/d8e4680b-7cf1-4a70-860b-7bbf5e0bf9a2/page/D0DYC
   message: alternative view of breakthrough infections data in case the dash (secondary) does not load
+
+- name: monthly-breakthrough-data
+  url: https://docs.google.com/spreadsheets/d/1c2QrNMz8pIbYEKzMJL7Uh2dtThOJa2j1sSMwiDo5Gz4/export?format=csv&gid=823993039
+  file: csv
+  message: Monthly Breakthrough Data tab
+
+- name: cases-by-vaccine-status
+  url: https://docs.google.com/spreadsheets/d/1c2QrNMz8pIbYEKzMJL7Uh2dtThOJa2j1sSMwiDo5Gz4/export?format=csv&gid=345208626
+  file: csv
+  message: Case Rates by Vaccine Status tab
