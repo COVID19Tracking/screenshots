@@ -1,0 +1,7 @@
+state: AZ
+
+links:
+- name: primary
+  url: https://azdhs.gov/covid19/documents/data/rates-of-cov-19-by-vaccination.pdf
+  file: pdf
+  message: downloading pdf
